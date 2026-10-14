@@ -2,57 +2,159 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="La Survie des BGSM : le modpack Minecraft du serveur, ses mods, son histoire et comment bien le régler.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="La Survie des BGSM : un nouveau monde s'éveille le vendredi 17 octobre à 20h00.">
+<meta property="og:title" content="La Survie des BGSM · 17 octobre, 20h00">
+<meta property="og:description" content="L'Étoile s'est brisée. Un nouveau monde s'éveille.">
 <title>La Survie des BGSM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Page d'attente : un ciel de nuit plein écran (canvas), au centre le titre, la date et le compte à rebours.
+   Look sombre assumé quel que soit le thème du visiteur. */
+:root{
+  --night:#06070d; --ink:#e9e6f5; --dim:#8d89a8; --gold:#f2c35b; --gold-deep:#b9852a; --violet:#a98bff; --line:#2a2740;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--night);color:var(--ink);font-family:var(--f-display);overflow-x:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+main{position:relative;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;gap:28px;padding:max(48px,env(safe-area-inset-top)) 16px max(48px,env(safe-area-inset-bottom))}
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1{margin:0;font-weight:800;font-size:clamp(40px,9vw,104px);line-height:.95;letter-spacing:-.03em;text-wrap:balance;
+  background:linear-gradient(180deg,#fff 0%,#f6e7c1 55%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow:0 0 60px rgba(242,195,91,.18)}
+.sub{margin:0;font-size:clamp(18px,2.6vw,26px);font-weight:500;color:var(--ink);max-width:30ch}
+.date{font-family:var(--f-mono);font-size:clamp(14px,1.8vw,17px);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.date b{color:var(--ink);font-weight:600}
+.count{display:flex;gap:clamp(10px,2.4vw,22px);justify-content:center;flex-wrap:wrap}
+.unit{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:clamp(68px,15vw,128px);padding:16px 10px 12px;
+  border:1px solid var(--line);border-radius:14px;background:rgba(14,13,26,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.unit b{font-family:var(--f-mono);font-weight:600;font-size:clamp(36px,8vw,76px);line-height:1;font-variant-numeric:tabular-nums;color:#fff}
+.unit span{font-family:var(--f-mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.unit.sec b{color:var(--gold)}
+.quote{margin:0;max-width:44ch;font-size:clamp(15px,1.8vw,18px);color:var(--violet);font-style:italic;font-weight:500}
+.quote span{display:block;margin-top:6px;font-style:normal;font-family:var(--f-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.tags{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-family:var(--f-mono);font-size:13px;letter-spacing:.08em;color:var(--dim)}
+.tags b{color:var(--ink);font-weight:600}
+.open{display:none;flex-direction:column;align-items:center;gap:14px}
+.open a{font-family:var(--f-mono);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:14px;color:var(--night);
+  background:var(--gold);padding:14px 26px;border-radius:999px;text-decoration:none}
+.open a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+body.ouvert .count,body.ouvert .date{display:none}
+body.ouvert .open{display:flex}
+.foot{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--dim)}
+@media (prefers-reduced-motion:no-preference){
+  h1,.sub,.date,.count,.quote,.tags{animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+  .sub{animation-delay:.15s}.date{animation-delay:.3s}.count{animation-delay:.45s}.quote{animation-delay:.7s}.tags{animation-delay:.85s}
+  .unit.sec b{animation:pulse 1s ease-in-out infinite}
+}
+@keyframes rise{from{opacity:.0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{text-shadow:0 0 24px rgba(242,195,91,.55)}}
+</style>
 </head>
 <body>
-<nav class="nav" aria-label="Navigation principale"><div class="nav-in">
-  <a class="brand" href="index.html">La Survie <span>des BGSM</span></a>
-  <a class="lien" href="index.html" aria-current="page">Accueil</a>
-  <a class="lien" href="mods.html">Les mods</a>
-  <a class="lien" href="serveur.html">Le but du serveur</a>
-  <a class="lien" href="parametrage.html">Paramétrage</a>
-</div></nav>
+<canvas id="ciel" aria-hidden="true"></canvas>
+<main>
+  <span class="eyebrow">La Survie des BGSM</span>
+  <h1>L'Étoile s'est brisée.</h1>
+  <p class="sub">Un nouveau monde s'éveille.</p>
+  <p class="date">Vendredi <b>17 octobre</b> · <b>20h00</b></p>
 
-<main class="wrap">
-  <header class="page">
-    <span class="eyebrow">Modpack · Minecraft 1.21.1 · NeoForge</span>
-    <h1>Un monde à explorer, une étoile à reforger</h1>
-    <p class="lead">La Survie des BGSM, c'est un serveur de survie entre amis : de l'aventure, des boss, de la magie, un peu de tech, beaucoup de cuisine et de construction. Et une histoire que tout le serveur écrit ensemble.</p>
-  </header>
-
-  <div class="facts" aria-label="Le pack en chiffres">
-    <div><b>~200</b><span>mods</span></div>
-    <div><b>5</b><span>dimensions en plus</span></div>
-    <div><b>30+</b><span>boss</span></div>
-    <div><b>580+</b><span>quêtes</span></div>
+  <div class="count" role="timer" aria-live="off" aria-label="Temps avant l'ouverture">
+    <div class="unit"><b id="j">--</b><span>jours</span></div>
+    <div class="unit"><b id="h">--</b><span>heures</span></div>
+    <div class="unit"><b id="m">--</b><span>minutes</span></div>
+    <div class="unit sec"><b id="s">--</b><span>secondes</span></div>
   </div>
 
-  <section>
-    <h2>Par où commencer</h2>
-    <div class="cards">
-      <a class="card" href="serveur.html"><span class="num">01</span><h3>Le but du serveur</h3><p>L'Étoile brisée, l'histoire en 8 actes, les événements et le Démiurge.</p></a>
-      <a class="card" href="parametrage.html"><span class="num">02</span><h3>Paramétrage</h3><p>RAM, réglages vidéo, shaders : à faire une fois avant de jouer.</p></a>
-      <a class="card" href="mods.html"><span class="num">03</span><h3>Les mods</h3><p>La liste complète, rangée par thème, avec une phrase pour chacun.</p></a>
-    </div>
-  </section>
+  <div class="open" id="open">
+    <p class="sub">Le monde est ouvert. L'Étoile attend d'être reforgée.</p>
+    <a href="accueil.html">Entrer</a>
+  </div>
 
-  <section>
-    <h2>Rejoindre le serveur</h2>
-    <ul class="list">
-      <li>Installe <b>CurseForge</b> et le modpack <b>La Survie des BGSM</b> (le lien est sur le Discord).</li>
-      <li>Règle ta RAM et ta vidéo avec la page <a href="parametrage.html">Paramétrage</a>.</li>
-      <li>Lance le jeu, puis <b>Multijoueur → Ajouter un serveur</b> avec l'adresse donnée sur le Discord.</li>
-      <li>À ta première connexion, lis le livre <b>« L'Étoile brisée »</b> que tu reçois, puis ouvre le livre de quêtes.</li>
-    </ul>
-    <div class="note">N'ajoute ni ne retire aucun mod toi-même : ta liste doit être identique à celle du serveur, sinon la connexion est refusée.</div>
-  </section>
+  <p class="quote">« Encore des mortels... Bienvenue dans mon monde. Je l'ai façonné bloc par bloc. Voyons ce que vous en ferez. »<span>— Le Démiurge</span></p>
+
+  <div class="tags"><span><b>~200</b> mods</span><span><b>30+</b> boss</span><span><b>5</b> dimensions</span><span><b>8</b> actes</span><span><b>9</b> fragments</span></div>
+  <p class="foot">Rendez-vous sur le Discord des BGSM.</p>
 </main>
 
-<footer class="site">La Survie des BGSM · serveur privé entre amis · questions sur le Discord.</footer>
+<script>
+// ---------- compte à rebours (heure de Paris, été : UTC+2)
+const OUVERTURE = Date.parse('2026-10-17T20:00:00+02:00');
+const pad = n => String(n).padStart(2, '0');
+let redirige = false;
+function tick() {
+  const r = OUVERTURE - Date.now();
+  if (r <= 0) {
+    document.body.classList.add('ouvert');
+    document.title = 'La Survie des BGSM · Ouvert !';
+    if (!redirige) { redirige = true; setTimeout(() => location.assign('accueil.html'), 6000); }
+    return;
+  }
+  const s = Math.floor(r / 1000);
+  document.getElementById('j').textContent = pad(Math.floor(s / 86400));
+  document.getElementById('h').textContent = pad(Math.floor(s / 3600) % 24);
+  document.getElementById('m').textContent = pad(Math.floor(s / 60) % 60);
+  document.getElementById('s').textContent = pad(s % 60);
+}
+tick(); setInterval(tick, 250);
+
+// ---------- ciel : étoiles qui scintillent, étoiles filantes, 9 éclats en orbite autour d'un cœur doré
+const cv = document.getElementById('ciel'), cx = cv.getContext('2d');
+const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W, H, dpr, etoiles = [], filantes = [], t0 = performance.now();
+function taille() {
+  dpr = Math.min(devicePixelRatio || 1, 2);
+  W = cv.width = innerWidth * dpr; H = cv.height = innerHeight * dpr;
+  etoiles = Array.from({ length: Math.round(innerWidth * innerHeight / 2600) }, () => ({
+    x: Math.random() * W, y: Math.random() * H, r: (Math.random() * 1.2 + .3) * dpr, p: Math.random() * 6.28, v: .5 + Math.random() * 1.5 }));
+}
+addEventListener('resize', taille); taille();
+const ECLATS = Array.from({ length: 9 }, (_, i) => ({ a: i / 9 * Math.PI * 2, d: .9 + (i % 3) * .14, rot: Math.random() * 6.28, sz: .9 + Math.random() * .4 }));
+function eclat(x, y, s, rot, alpha) {
+  cx.save(); cx.translate(x, y); cx.rotate(rot); cx.globalAlpha = alpha;
+  cx.beginPath(); cx.moveTo(0, -s); cx.lineTo(s * .45, -s * .1); cx.lineTo(s * .2, s * .9); cx.lineTo(-s * .35, s * .5); cx.lineTo(-s * .5, -s * .2); cx.closePath();
+  const g = cx.createLinearGradient(-s, -s, s, s); g.addColorStop(0, '#fff6dc'); g.addColorStop(.5, '#f2c35b'); g.addColorStop(1, '#b9852a');
+  cx.fillStyle = g; cx.shadowColor = 'rgba(242,195,91,.8)'; cx.shadowBlur = s * 1.2; cx.fill(); cx.restore();
+}
+function dessiner(now) {
+  const t = (now - t0) / 1000;
+  cx.clearRect(0, 0, W, H);
+  const fond = cx.createRadialGradient(W / 2, H * .42, 0, W / 2, H * .42, Math.max(W, H) * .7);
+  fond.addColorStop(0, '#1a1531'); fond.addColorStop(.5, '#0b0b18'); fond.addColorStop(1, '#06070d');
+  cx.fillStyle = fond; cx.fillRect(0, 0, W, H);
+  for (const e of etoiles) {
+    cx.globalAlpha = calme ? .7 : .35 + .65 * Math.abs(Math.sin(e.p + t * e.v));
+    cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(e.x, e.y, e.r, 0, 6.28); cx.fill();
+  }
+  cx.globalAlpha = 1;
+  // Étoile brisée : un cœur doré et 9 éclats qui tournent lentement (ils se rapprochent à l'approche de l'ouverture)
+  const reste = Math.max(0, OUVERTURE - Date.now()), rapproche = Math.min(1, reste / (7 * 86400e3));
+  const R = Math.min(W, H) * (.13 + .17 * rapproche), cX = W / 2, cY = H * .5;
+  const halo = cx.createRadialGradient(cX, cY, 0, cX, cY, R * 1.6);
+  halo.addColorStop(0, 'rgba(242,195,91,.22)'); halo.addColorStop(1, 'rgba(242,195,91,0)');
+  cx.fillStyle = halo; cx.fillRect(cX - R * 2, cY - R * 2, R * 4, R * 4);
+  for (const e of ECLATS) {
+    const a = e.a + (calme ? 0 : t * .07);
+    eclat(cX + Math.cos(a) * R * e.d, cY + Math.sin(a) * R * e.d * .62, 9 * dpr * e.sz, e.rot + (calme ? 0 : t * .3), .55);
+  }
+  // Étoiles filantes
+  if (!calme && Math.random() < .012) filantes.push({ x: Math.random() * W, y: Math.random() * H * .4, vx: (4 + Math.random() * 4) * dpr, vy: (2 + Math.random() * 2) * dpr, vie: 1 });
+  filantes = filantes.filter(f => f.vie > 0);
+  for (const f of filantes) {
+    const g = cx.createLinearGradient(f.x, f.y, f.x - f.vx * 14, f.y - f.vy * 14);
+    g.addColorStop(0, `rgba(255,240,200,${f.vie})`); g.addColorStop(1, 'rgba(255,240,200,0)');
+    cx.strokeStyle = g; cx.lineWidth = 1.6 * dpr; cx.beginPath(); cx.moveTo(f.x, f.y); cx.lineTo(f.x - f.vx * 14, f.y - f.vy * 14); cx.stroke();
+    f.x += f.vx; f.y += f.vy; f.vie -= .012;
+  }
+  if (!calme) requestAnimationFrame(dessiner);
+}
+requestAnimationFrame(dessiner);
+</script>
 </body>
 </html>
