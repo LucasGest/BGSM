@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="La liste complète des mods de La Survie des BGSM, rangés par thème.">
+<title>Les mods · La Survie des BGSM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Navigation principale"><div class="nav-in">
+  <a class="brand" href="index.html">La Survie <span>des BGSM</span></a>
+  <a class="lien" href="index.html">Accueil</a>
+  <a class="lien" href="mods.html" aria-current="page">Les mods</a>
+  <a class="lien" href="serveur.html">Le but du serveur</a>
+  <a class="lien" href="parametrage.html">Paramétrage</a>
+</div></nav>
+
+<main class="wrap large">
+  <header class="page">
+    <span class="eyebrow">Le pack</span>
+    <h1>Les mods</h1>
+    <p class="lead">Tous les mods du pack, rangés par thème. Les bibliothèques sont des mods techniques dont les autres ont besoin : tu n'as rien à faire avec.</p>
+  </header>
+
+  <div class="filters">
+    <label for="q">Rechercher<input id="q" type="search" placeholder="Nom ou description"></label>
+    <label for="cat">Thème<select id="cat"><option value="">Tous les thèmes</option></select></label>
+    <label class="chk" for="libs"><input id="libs" type="checkbox"> Afficher les bibliothèques</label>
+  </div>
+  <p class="compteur" id="compteur" aria-live="polite">Chargement de la liste…</p>
+  <div id="liste" style="display:flex;flex-direction:column;gap:14px"></div>
+</main>
+
+<footer class="site">La liste est générée à partir des fichiers du pack : elle est toujours à jour avec la version du serveur.</footer>
+
+<script>
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let DATA = null;
+function render() {
+  const q = document.getElementById('q').value.trim().toLowerCase();
+  const cat = document.getElementById('cat').value;
+  const libs = document.getElementById('libs').checked;
+  const LIB = 'Bibliothèques';
+  const vis = DATA.mods.filter(m =>
+    (libs || m.cat !== LIB || cat === LIB) && (!cat || m.cat === cat) &&
+    (!q || m.nom.toLowerCase().includes(q) || m.desc.toLowerCase().includes(q)));
+  const html = [];
+  for (const c of DATA.categories) {
+    const ms = vis.filter(m => m.cat === c);
+    if (!ms.length) continue;
+    html.push(`<section><div class="cat-title"><h2>${esc(c)}</h2><span>${ms.length}</span></div><div class="grid-mods">` +
+      ms.map(m => `<div class="mod"><b>${esc(m.nom)}</b><p>${esc(m.desc)}</p>${m.client ? '<span class="badge">joueurs seulement</span>' : ''}</div>`).join('') +
+      '</div></section>');
+  }
+  document.getElementById('liste').innerHTML = html.join('') || '<p class="muted">Aucun mod ne correspond à ta recherche.</p>';
+  const total = DATA.mods.length, nlib = DATA.mods.filter(m => m.cat === LIB).length;
+  document.getElementById('compteur').textContent = `${vis.length} mods affichés sur ${total} (dont ${nlib} bibliothèques)`;
+}
+fetch('assets/mods.json').then(r => r.json()).then(d => {
+  DATA = d;
+  const sel = document.getElementById('cat');
+  d.categories.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; sel.append(o); });
+  ['q', 'cat', 'libs'].forEach(id => document.getElementById(id).addEventListener('input', render));
+  render();
+}).catch(() => { document.getElementById('compteur').textContent = "La liste n'a pas pu être chargée. Recharge la page."; });
+</script>
+</body>
+</html>

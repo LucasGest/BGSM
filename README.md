@@ -1,5 +1,13 @@
-# Guide performances — La Survie des BGSM
+# La Survie des BGSM — site du serveur
 
-Page statique (un seul `index.html`) qui explique aux joueurs du modpack *La Survie des BGSM* (NeoForge 1.21.1) comment régler leur jeu : RAM dans CurseForge, réglages vidéo, shaders, PC, et comment envoyer un diagnostic spark à l'admin.
+Site statique du modpack *La Survie des BGSM* (Minecraft 1.21.1, NeoForge), en ligne sur https://surviebgsm.vercel.app/
 
-Déploiement : n'importe quel hébergeur statique (Vercel, GitHub Pages…), sans étape de build.
+| Page | Contenu |
+|---|---|
+| `index.html` | Accueil : présentation, comment rejoindre |
+| `mods.html` | La liste des ~200 mods, par thème, avec recherche (données : `assets/mods.json`) |
+| `serveur.html` | Le but du serveur : l'Étoile brisée, l'histoire en 8 actes, la progression, les événements, le Démiurge |
+| `parametrage.html` | Réglages du client : RAM, vidéo, shaders, PC, diagnostic spark |
+
+`assets/mods.json` est généré à partir du dossier `mods` du pack (script `gen_site_mods.py`, hors de ce dépôt).
+Pas d'étape de build : Vercel sert les fichiers tels quels (`vercel.json` active les URL sans `.html`).

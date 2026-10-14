@@ -1,0 +1,1411 @@
+{
+ "categories": [
+  "Monde et structures",
+  "Dimensions",
+  "Exploration et butin",
+  "Boss et combat",
+  "Magie",
+  "Tech et stockage",
+  "Cuisine et ferme",
+  "Déco et construction",
+  "Multijoueur et confort",
+  "Interface",
+  "Performance",
+  "Bibliothèques"
+ ],
+ "mods": [
+  {
+   "id": "ctov",
+   "nom": "ChoiceTheorem's Overhauled Village",
+   "cat": "Monde et structures",
+   "desc": "Des villages adaptés à chaque biome.",
+   "client": false
+  },
+  {
+   "id": "dungeons_and_taverns",
+   "nom": "Dungeons and Taverns",
+   "cat": "Monde et structures",
+   "desc": "Tavernes, camps, tours de guet et donjons.",
+   "client": false
+  },
+  {
+   "id": "explorify",
+   "nom": "Explorify",
+   "cat": "Monde et structures",
+   "desc": "Petites structures d'exploration : tavernes, mausolées, campements.",
+   "client": false
+  },
+  {
+   "id": "repurposed_structures",
+   "nom": "Repurposed Structures",
+   "cat": "Monde et structures",
+   "desc": "Des variantes des structures vanilla selon les biomes.",
+   "client": false
+  },
+  {
+   "id": "sparsestructures",
+   "nom": "Sparse Structures",
+   "cat": "Monde et structures",
+   "desc": "Espace les structures pour ne pas en trouver partout.",
+   "client": false
+  },
+  {
+   "id": "structory",
+   "nom": "Structory",
+   "cat": "Monde et structures",
+   "desc": "Ruines, vieux manoirs, cimetières : des lieux à histoire.",
+   "client": false
+  },
+  {
+   "id": "tectonic",
+   "nom": "Tectonic",
+   "cat": "Monde et structures",
+   "desc": "Des montagnes, des vallées et des océans beaucoup plus spectaculaires.",
+   "client": false
+  },
+  {
+   "id": "terralith",
+   "nom": "Terralith",
+   "cat": "Monde et structures",
+   "desc": "Près de 100 nouveaux biomes : canyons, volcans, îles célestes, forêts de lavande.",
+   "client": false
+  },
+  {
+   "id": "t_and_t",
+   "nom": "Towns and Towers",
+   "cat": "Monde et structures",
+   "desc": "Villages, tours et avant-postes de pillards variés.",
+   "client": false
+  },
+  {
+   "id": "dungeons_arise",
+   "nom": "When Dungeons Arise",
+   "cat": "Monde et structures",
+   "desc": "Des structures géantes à explorer en groupe : châteaux, colisée, palais.",
+   "client": false
+  },
+  {
+   "id": "bettercaves",
+   "nom": "YUNG's Better Caves",
+   "cat": "Monde et structures",
+   "desc": "Des grottes plus grandes et plus variées.",
+   "client": false
+  },
+  {
+   "id": "betterdeserttemples",
+   "nom": "YUNG's Better Desert Temples",
+   "cat": "Monde et structures",
+   "desc": "Des temples du désert pleins de pièges.",
+   "client": false
+  },
+  {
+   "id": "betterdungeons",
+   "nom": "YUNG's Better Dungeons",
+   "cat": "Monde et structures",
+   "desc": "Des donjons souterrains repensés.",
+   "client": false
+  },
+  {
+   "id": "betterendisland",
+   "nom": "YUNG's Better End Island",
+   "cat": "Monde et structures",
+   "desc": "Une île principale de l'End et un combat de dragon repensés.",
+   "client": false
+  },
+  {
+   "id": "betterjungletemples",
+   "nom": "YUNG's Better Jungle Temples",
+   "cat": "Monde et structures",
+   "desc": "Des temples de la jungle avec énigmes.",
+   "client": false
+  },
+  {
+   "id": "bettermineshafts",
+   "nom": "YUNG's Better Mineshafts",
+   "cat": "Monde et structures",
+   "desc": "Des mines abandonnées immenses, adaptées à chaque biome.",
+   "client": false
+  },
+  {
+   "id": "betterfortresses",
+   "nom": "YUNG's Better Nether Fortresses",
+   "cat": "Monde et structures",
+   "desc": "Des forteresses du Nether gigantesques.",
+   "client": false
+  },
+  {
+   "id": "betteroceanmonuments",
+   "nom": "YUNG's Better Ocean Monuments",
+   "cat": "Monde et structures",
+   "desc": "Des monuments sous-marins plus grands.",
+   "client": false
+  },
+  {
+   "id": "betterstrongholds",
+   "nom": "YUNG's Better Strongholds",
+   "cat": "Monde et structures",
+   "desc": "Le fort qui mène à l'End, beaucoup plus grand et piégé.",
+   "client": false
+  },
+  {
+   "id": "betterwitchhuts",
+   "nom": "YUNG's Better Witch Huts",
+   "cat": "Monde et structures",
+   "desc": "Des cabanes de sorcière plus soignées.",
+   "client": false
+  },
+  {
+   "id": "yungscavebiomes",
+   "nom": "YUNG's Cave Biomes",
+   "cat": "Monde et structures",
+   "desc": "Des biomes souterrains : grottes de glace, déserts enfouis.",
+   "client": false
+  },
+  {
+   "id": "aether_villages",
+   "nom": "Aether Villages",
+   "cat": "Dimensions",
+   "desc": "Des villages et des temples dans l'Aether.",
+   "client": false
+  },
+  {
+   "id": "betterend",
+   "nom": "BetterEnd",
+   "cat": "Dimensions",
+   "desc": "Transforme les îles de l'End : biomes, minerais, armures.",
+   "client": false
+  },
+  {
+   "id": "deep_aether",
+   "nom": "Deep Aether",
+   "cat": "Dimensions",
+   "desc": "Prolonge l'Aether : nouveaux biomes, matériaux et donjon.",
+   "client": false
+  },
+  {
+   "id": "deeperdarker",
+   "nom": "Deeper and Darker",
+   "cat": "Dimensions",
+   "desc": "L'Otherside, la dimension cachée derrière les cités antiques.",
+   "client": false
+  },
+  {
+   "id": "aether",
+   "nom": "The Aether",
+   "cat": "Dimensions",
+   "desc": "La dimension des îles célestes, avec ses donjons et ses boss.",
+   "client": false
+  },
+  {
+   "id": "twilightforest",
+   "nom": "The Twilight Forest",
+   "cat": "Dimensions",
+   "desc": "La forêt du crépuscule : une progression de 8 boss.",
+   "client": false
+  },
+  {
+   "id": "artifacts",
+   "nom": "Artifacts",
+   "cat": "Exploration et butin",
+   "desc": "Des accessoires magiques à trouver : double saut, cœurs en plus, aimant.",
+   "client": false
+  },
+  {
+   "id": "compasstomapxaeros",
+   "nom": "Compass to Map",
+   "cat": "Exploration et butin",
+   "desc": "Ce que trouvent les boussoles devient un point sur la carte.",
+   "client": false
+  },
+  {
+   "id": "explorerscompass",
+   "nom": "Explorer's Compass",
+   "cat": "Exploration et butin",
+   "desc": "Une boussole qui trouve n'importe quelle structure.",
+   "client": false
+  },
+  {
+   "id": "lootr",
+   "nom": "Lootr",
+   "cat": "Exploration et butin",
+   "desc": "Chaque joueur a son propre butin dans les coffres des structures.",
+   "client": false
+  },
+  {
+   "id": "lootr_ftb",
+   "nom": "Lootr × FTB",
+   "cat": "Exploration et butin",
+   "desc": "Lootr fonctionne avec les chunks protégés de FTB.",
+   "client": false
+  },
+  {
+   "id": "naturescompass",
+   "nom": "Nature's Compass",
+   "cat": "Exploration et butin",
+   "desc": "Une boussole qui trouve n'importe quel biome.",
+   "client": false
+  },
+  {
+   "id": "twilight_lootr",
+   "nom": "Twilight Lootr",
+   "cat": "Exploration et butin",
+   "desc": "Lootr dans le Twilight Forest.",
+   "client": false
+  },
+  {
+   "id": "waystones",
+   "nom": "Waystones",
+   "cat": "Exploration et butin",
+   "desc": "Des pierres de téléportation à activer partout dans le monde.",
+   "client": false
+  },
+  {
+   "id": "w2pets",
+   "nom": "Waystones Teleport Pets",
+   "cat": "Exploration et butin",
+   "desc": "Tes animaux te suivent quand tu te téléportes.",
+   "client": false
+  },
+  {
+   "id": "aquamirae",
+   "nom": "Aquamirae",
+   "cat": "Boss et combat",
+   "desc": "Les océans glacés, leurs pirates et la capitaine Cornelia.",
+   "client": false
+  },
+  {
+   "id": "beekeeperhut",
+   "nom": "Beekeeper Hut",
+   "cat": "Boss et combat",
+   "desc": "Une cabane d'apiculteur dans les villages.",
+   "client": false
+  },
+  {
+   "id": "flowerymooblooms",
+   "nom": "Flowery Mooblooms",
+   "cat": "Boss et combat",
+   "desc": "Des vaches couvertes de fleurs.",
+   "client": false
+  },
+  {
+   "id": "friendsandfoes",
+   "nom": "Friends & Foes",
+   "cat": "Boss et combat",
+   "desc": "Les créatures des votes Minecraft : golem de cuivre, Illusionniste, Wildfire.",
+   "client": false
+  },
+  {
+   "id": "cataclysm",
+   "nom": "L_Ender's Cataclysm",
+   "cat": "Boss et combat",
+   "desc": "Les grands boss du pack : Ignis, le Léviathan, le Harbinger, l'Ender Guardian.",
+   "client": false
+  },
+  {
+   "id": "demiurge",
+   "nom": "Le Démiurge",
+   "cat": "Boss et combat",
+   "desc": "Le boss créé pour le serveur : le créateur du monde, en trois phases.",
+   "client": false
+  },
+  {
+   "id": "mowzies_cataclysm",
+   "nom": "Mowzie's Cataclysm",
+   "cat": "Boss et combat",
+   "desc": "Relie Mowzie's Mobs et Cataclysm.",
+   "client": false
+  },
+  {
+   "id": "mowziesmobs",
+   "nom": "Mowzie's Mobs",
+   "cat": "Boss et combat",
+   "desc": "Boss soignés : le Frostmaw, le Wroughtnaut, Umvuthi, le Sculpteur.",
+   "client": false
+  },
+  {
+   "id": "naturalist",
+   "nom": "Naturalist",
+   "cat": "Boss et combat",
+   "desc": "Des dizaines d'animaux sauvages : ours, cerfs, lions, lucioles.",
+   "client": false
+  },
+  {
+   "id": "simplyswords",
+   "nom": "Simply Swords",
+   "cat": "Boss et combat",
+   "desc": "Katanas, lances, faux, marteaux et armes uniques à pouvoirs.",
+   "client": false
+  },
+  {
+   "id": "simplycataclysm",
+   "nom": "Simply Swords × Cataclysm",
+   "cat": "Boss et combat",
+   "desc": "Des armes tirées des boss de Cataclysm.",
+   "client": false
+  },
+  {
+   "id": "ars_n_spells",
+   "nom": "Ars 'n' Spells",
+   "cat": "Magie",
+   "desc": "Un mana commun entre Ars Nouveau et Iron's Spells.",
+   "client": false
+  },
+  {
+   "id": "ars_nouveau",
+   "nom": "Ars Nouveau",
+   "cat": "Magie",
+   "desc": "Crée tes propres sorts, invoque des familiers, automatise par la magie.",
+   "client": false
+  },
+  {
+   "id": "ars_ocultas",
+   "nom": "Ars Ocultas",
+   "cat": "Magie",
+   "desc": "Relie Ars Nouveau et Occultism.",
+   "client": false
+  },
+  {
+   "id": "cataclysm_spellbooks",
+   "nom": "Cataclysm Spellbooks",
+   "cat": "Magie",
+   "desc": "Des sorts Iron's Spells tirés des boss de Cataclysm.",
+   "client": false
+  },
+  {
+   "id": "darkermagic",
+   "nom": "Deeper and Darker Spellbooks",
+   "cat": "Magie",
+   "desc": "La magie du Warden.",
+   "client": false
+  },
+  {
+   "id": "irons_spellbooks",
+   "nom": "Iron's Spells 'n Spellbooks",
+   "cat": "Magie",
+   "desc": "La magie de combat : grimoires, parchemins, écoles de magie.",
+   "client": false
+  },
+  {
+   "id": "occultism",
+   "nom": "Occultism",
+   "cat": "Magie",
+   "desc": "Rituels et esprits : mineurs, stockage magique, familiers.",
+   "client": false
+  },
+  {
+   "id": "botanypots",
+   "nom": "Botany Pots",
+   "cat": "Tech et stockage",
+   "desc": "Des pots qui font pousser plantes et graines Mystical, avec récolte automatique.",
+   "client": false
+  },
+  {
+   "id": "botanypotsmystical",
+   "nom": "Botany Pots × Mystical",
+   "cat": "Tech et stockage",
+   "desc": "Les graines Mystical dans les Botany Pots.",
+   "client": false
+  },
+  {
+   "id": "botanytrees",
+   "nom": "Botany Trees",
+   "cat": "Tech et stockage",
+   "desc": "Des arbres en pot.",
+   "client": false
+  },
+  {
+   "id": "elevatorid",
+   "nom": "Elevator Mod",
+   "cat": "Tech et stockage",
+   "desc": "Des ascenseurs : saute pour monter, accroupis-toi pour descendre.",
+   "client": false
+  },
+  {
+   "id": "extradisks",
+   "nom": "Extra Disks",
+   "cat": "Tech et stockage",
+   "desc": "Des disques Refined Storage beaucoup plus grands.",
+   "client": false
+  },
+  {
+   "id": "extrastorage",
+   "nom": "ExtraStorage",
+   "cat": "Tech et stockage",
+   "desc": "Des autocrafters Refined Storage plus rapides.",
+   "client": false
+  },
+  {
+   "id": "fallingtree",
+   "nom": "FallingTree",
+   "cat": "Tech et stockage",
+   "desc": "Coupe le bas d'un arbre, il tombe en entier.",
+   "client": false
+  },
+  {
+   "id": "ftbultimine",
+   "nom": "FTB Ultimine",
+   "cat": "Tech et stockage",
+   "desc": "Casse tout un filon d'un coup.",
+   "client": false
+  },
+  {
+   "id": "interdimensionalwirelesstransmitter",
+   "nom": "Interdimensional Wireless Transmitter",
+   "cat": "Tech et stockage",
+   "desc": "Accède à ton réseau RS depuis n'importe quelle dimension.",
+   "client": false
+  },
+  {
+   "id": "ironfurnaces",
+   "nom": "Iron Furnaces",
+   "cat": "Tech et stockage",
+   "desc": "Des fours plus rapides, améliorables.",
+   "client": false
+  },
+  {
+   "id": "mekanism",
+   "nom": "Mekanism",
+   "cat": "Tech et stockage",
+   "desc": "La tech du pack : énergie, traitement des minerais, armures, réacteurs.",
+   "client": false
+  },
+  {
+   "id": "mekanismadditions",
+   "nom": "Mekanism Additions",
+   "cat": "Tech et stockage",
+   "desc": "Plastique coloré, ballons, et un peu de déco.",
+   "client": false
+  },
+  {
+   "id": "mekanismgenerators",
+   "nom": "Mekanism Generators",
+   "cat": "Tech et stockage",
+   "desc": "Éoliennes, panneaux solaires, réacteurs à fission et fusion.",
+   "client": false
+  },
+  {
+   "id": "mekanismtools",
+   "nom": "Mekanism Tools",
+   "cat": "Tech et stockage",
+   "desc": "Outils et armures en osmium, acier, obsidienne raffinée.",
+   "client": false
+  },
+  {
+   "id": "mysticalagradditions",
+   "nom": "Mystical Agradditions",
+   "cat": "Tech et stockage",
+   "desc": "Le palier 6 (Insanium) de Mystical Agriculture.",
+   "client": false
+  },
+  {
+   "id": "mysticalagriculture",
+   "nom": "Mystical Agriculture",
+   "cat": "Tech et stockage",
+   "desc": "Fais pousser tes ressources. Chaque palier se débloque en explorant.",
+   "client": false
+  },
+  {
+   "id": "pipez",
+   "nom": "Pipez",
+   "cat": "Tech et stockage",
+   "desc": "Tuyaux d'objets, de fluides, d'énergie et de gaz.",
+   "client": false
+  },
+  {
+   "id": "refinedelite",
+   "nom": "Refined Elite",
+   "cat": "Tech et stockage",
+   "desc": "Des améliorations pour Refined Storage.",
+   "client": false
+  },
+  {
+   "id": "refinedstorage",
+   "nom": "Refined Storage",
+   "cat": "Tech et stockage",
+   "desc": "Un réseau de stockage numérique, avec fabrication automatique.",
+   "client": false
+  },
+  {
+   "id": "refinedstorage_curios_integration",
+   "nom": "RS × Curios",
+   "cat": "Tech et stockage",
+   "desc": "Le terminal sans fil dans un emplacement d'accessoire.",
+   "client": false
+  },
+  {
+   "id": "refinedstorage_jei_integration",
+   "nom": "RS × JEI",
+   "cat": "Tech et stockage",
+   "desc": "JEI remplit la grille de fabrication de Refined Storage.",
+   "client": false
+  },
+  {
+   "id": "refinedstorage_mekanism_integration",
+   "nom": "RS × Mekanism",
+   "cat": "Tech et stockage",
+   "desc": "Refined Storage stocke les gaz de Mekanism.",
+   "client": false
+  },
+  {
+   "id": "sophisticatedbackpacks",
+   "nom": "Sophisticated Backpacks",
+   "cat": "Tech et stockage",
+   "desc": "Des sacs à dos améliorables : aimant, nourriture, établi.",
+   "client": false
+  },
+  {
+   "id": "sophisticatedstorage",
+   "nom": "Sophisticated Storage",
+   "cat": "Tech et stockage",
+   "desc": "Des coffres et barils améliorables.",
+   "client": false
+  },
+  {
+   "id": "torchmaster",
+   "nom": "Torchmaster",
+   "cat": "Tech et stockage",
+   "desc": "La méga-torche empêche les monstres d'apparaître autour de la base.",
+   "client": false
+  },
+  {
+   "id": "trashcans",
+   "nom": "Trash Cans",
+   "cat": "Tech et stockage",
+   "desc": "Des poubelles pour objets, fluides et énergie.",
+   "client": false
+  },
+  {
+   "id": "bakery",
+   "nom": "[Let's Do] Bakery",
+   "cat": "Cuisine et ferme",
+   "desc": "Pains, gâteaux et viennoiseries.",
+   "client": false
+  },
+  {
+   "id": "brewery",
+   "nom": "[Let's Do] Brewery",
+   "cat": "Cuisine et ferme",
+   "desc": "Bières et whiskys.",
+   "client": false
+  },
+  {
+   "id": "farm_and_charm",
+   "nom": "[Let's Do] Farm & Charm",
+   "cat": "Cuisine et ferme",
+   "desc": "Rôtissoire, casseroles, silos : la cuisine de ferme.",
+   "client": false
+  },
+  {
+   "id": "meadow",
+   "nom": "[Let's Do] Meadow",
+   "cat": "Cuisine et ferme",
+   "desc": "Fromages et cuisine des montagnes.",
+   "client": false
+  },
+  {
+   "id": "vinery",
+   "nom": "[Let's Do] Vinery",
+   "cat": "Cuisine et ferme",
+   "desc": "Vignes, pressoir et vins à faire vieillir.",
+   "client": false
+  },
+  {
+   "id": "aquaculture",
+   "nom": "Aquaculture 2",
+   "cat": "Cuisine et ferme",
+   "desc": "Des dizaines de poissons et des cannes améliorées.",
+   "client": false
+  },
+  {
+   "id": "aquaculturedelight",
+   "nom": "Aquaculture Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Cuisine les poissons d'Aquaculture.",
+   "client": false
+  },
+  {
+   "id": "arsdelight",
+   "nom": "Ars Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine d'Ars Nouveau.",
+   "client": false
+  },
+  {
+   "id": "lendersdelight",
+   "nom": "Cataclysm Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Cuisine les restes des boss de Cataclysm.",
+   "client": false
+  },
+  {
+   "id": "chefsdelight",
+   "nom": "Chef's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Des villageois cuisiniers et serveurs.",
+   "client": false
+  },
+  {
+   "id": "ends_delight",
+   "nom": "End's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Encore plus de cuisine de l'End, viande de dragon comprise.",
+   "client": false
+  },
+  {
+   "id": "endersdelight",
+   "nom": "Ender's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine de l'End.",
+   "client": false
+  },
+  {
+   "id": "expandeddelight",
+   "nom": "Expanded Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Encore plus de recettes et d'ingrédients.",
+   "client": false
+  },
+  {
+   "id": "farmersdelight",
+   "nom": "Farmer's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Cuisine complète : marmite, poêle, planche à découper, nouveaux légumes.",
+   "client": false
+  },
+  {
+   "id": "farmersknives",
+   "nom": "Farmer's Knives",
+   "cat": "Cuisine et ferme",
+   "desc": "Des couteaux dans tous les matériaux.",
+   "client": false
+  },
+  {
+   "id": "farmers_sandwiches",
+   "nom": "Farmer's Sandwiches",
+   "cat": "Cuisine et ferme",
+   "desc": "Des sandwichs.",
+   "client": false
+  },
+  {
+   "id": "frenchdelight",
+   "nom": "French Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine française : baguette, croissant, ratatouille.",
+   "client": false
+  },
+  {
+   "id": "frightsdelight",
+   "nom": "Fright's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Une cuisine monstrueuse.",
+   "client": false
+  },
+  {
+   "id": "mynethersdelight",
+   "nom": "My Nether's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine du Nether : piments, hoglins, striders.",
+   "client": false
+  },
+  {
+   "id": "mysticaldelight",
+   "nom": "Mystical Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine de Mystical Agriculture.",
+   "client": false
+  },
+  {
+   "id": "farmerd_naturalist_compat",
+   "nom": "Naturalist Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Cuisine les animaux de Naturalist.",
+   "client": false
+  },
+  {
+   "id": "oceansdelight",
+   "nom": "Ocean's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Calamars, gardiens et sushis.",
+   "client": false
+  },
+  {
+   "id": "rice_delight",
+   "nom": "Rice Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Des plats à base de riz.",
+   "client": false
+  },
+  {
+   "id": "sereneseasons",
+   "nom": "Serene Seasons",
+   "cat": "Cuisine et ferme",
+   "desc": "Quatre saisons : chaque culture a sa saison.",
+   "client": false
+  },
+  {
+   "id": "aethersdelight",
+   "nom": "The Aether's Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine de l'Aether.",
+   "client": false
+  },
+  {
+   "id": "twilightdelight",
+   "nom": "Twilight Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "La cuisine du Twilight Forest.",
+   "client": false
+  },
+  {
+   "id": "veggiesdelight",
+   "nom": "Veggies Delight",
+   "cat": "Cuisine et ferme",
+   "desc": "Nouveaux légumes : patates douces, courgettes, brocolis.",
+   "client": false
+  },
+  {
+   "id": "amendments",
+   "nom": "Amendments",
+   "cat": "Déco et construction",
+   "desc": "Le compagnon de Supplementaries.",
+   "client": false
+  },
+  {
+   "id": "another_furniture",
+   "nom": "Another Furniture",
+   "cat": "Déco et construction",
+   "desc": "Chaises, tables, étagères, rideaux.",
+   "client": false
+  },
+  {
+   "id": "chipped",
+   "nom": "Chipped",
+   "cat": "Déco et construction",
+   "desc": "Des centaines de variantes de blocs.",
+   "client": false
+  },
+  {
+   "id": "everycomp",
+   "nom": "Every Compat",
+   "cat": "Déco et construction",
+   "desc": "Les meubles des autres mods dans tous les bois du pack.",
+   "client": false
+  },
+  {
+   "id": "forgematica",
+   "nom": "Forgematica",
+   "cat": "Déco et construction",
+   "desc": "Litematica pour NeoForge : construire à partir de plans.",
+   "client": true
+  },
+  {
+   "id": "gemsrealm",
+   "nom": "Gems Realm",
+   "cat": "Déco et construction",
+   "desc": "Les blocs de gemmes des autres mods.",
+   "client": false
+  },
+  {
+   "id": "mcwbridges",
+   "nom": "Macaw's Bridges",
+   "cat": "Déco et construction",
+   "desc": "Des ponts.",
+   "client": false
+  },
+  {
+   "id": "mcwdoors",
+   "nom": "Macaw's Doors",
+   "cat": "Déco et construction",
+   "desc": "Des portes.",
+   "client": false
+  },
+  {
+   "id": "mcwfences",
+   "nom": "Macaw's Fences and Walls",
+   "cat": "Déco et construction",
+   "desc": "Des clôtures et des murets.",
+   "client": false
+  },
+  {
+   "id": "mcwfurnitures",
+   "nom": "Macaw's Furniture",
+   "cat": "Déco et construction",
+   "desc": "Des meubles en tous genres.",
+   "client": false
+  },
+  {
+   "id": "mcwlights",
+   "nom": "Macaw's Lights and Lamps",
+   "cat": "Déco et construction",
+   "desc": "Des lampes.",
+   "client": false
+  },
+  {
+   "id": "mcwpaintings",
+   "nom": "Macaw's Paintings",
+   "cat": "Déco et construction",
+   "desc": "Des tableaux.",
+   "client": false
+  },
+  {
+   "id": "mcwpaths",
+   "nom": "Macaw's Paths and Pavings",
+   "cat": "Déco et construction",
+   "desc": "Des chemins et des pavés.",
+   "client": false
+  },
+  {
+   "id": "mcwtrpdoors",
+   "nom": "Macaw's Trapdoors",
+   "cat": "Déco et construction",
+   "desc": "Des trappes.",
+   "client": false
+  },
+  {
+   "id": "mcwwindows",
+   "nom": "Macaw's Windows",
+   "cat": "Déco et construction",
+   "desc": "Des fenêtres.",
+   "client": false
+  },
+  {
+   "id": "refurbished_furniture",
+   "nom": "Refurbished Furniture",
+   "cat": "Déco et construction",
+   "desc": "Une cuisine électrique qui fonctionne : frigo, four, télé.",
+   "client": false
+  },
+  {
+   "id": "stonezone",
+   "nom": "Stone Zone",
+   "cat": "Déco et construction",
+   "desc": "Les blocs de pierre des autres mods dans toutes les pierres du pack.",
+   "client": false
+  },
+  {
+   "id": "supplementaries",
+   "nom": "Supplementaries",
+   "cat": "Déco et construction",
+   "desc": "Bocaux, cordes, globes, canons, panneaux et mille petits objets.",
+   "client": false
+  },
+  {
+   "id": "carryon",
+   "nom": "Carry On",
+   "cat": "Multijoueur et confort",
+   "desc": "Porte les coffres et les animaux à bout de bras.",
+   "client": false
+  },
+  {
+   "id": "comforts",
+   "nom": "Comforts",
+   "cat": "Multijoueur et confort",
+   "desc": "Sacs de couchage et hamacs.",
+   "client": false
+  },
+  {
+   "id": "tombstone",
+   "nom": "Corail Tombstone",
+   "cat": "Multijoueur et confort",
+   "desc": "Une tombe garde ton inventaire quand tu meurs.",
+   "client": false
+  },
+  {
+   "id": "cosmeticarmorreworked",
+   "nom": "Cosmetic Armor",
+   "cat": "Multijoueur et confort",
+   "desc": "Affiche une armure différente de celle que tu portes.",
+   "client": false
+  },
+  {
+   "id": "ftbchunks",
+   "nom": "FTB Chunks",
+   "cat": "Multijoueur et confort",
+   "desc": "Protège tes chunks et charge-les à distance.",
+   "client": false
+  },
+  {
+   "id": "ftbessentials",
+   "nom": "FTB Essentials",
+   "cat": "Multijoueur et confort",
+   "desc": "/home, /spawn, /tpa, /rtp, /back.",
+   "client": false
+  },
+  {
+   "id": "ftbquests",
+   "nom": "FTB Quests",
+   "cat": "Multijoueur et confort",
+   "desc": "Le livre de quêtes : l'histoire du serveur, les contrats, le guide.",
+   "client": false
+  },
+  {
+   "id": "ftbteams",
+   "nom": "FTB Teams",
+   "cat": "Multijoueur et confort",
+   "desc": "Des équipes qui partagent chunks et quêtes.",
+   "client": false
+  },
+  {
+   "id": "kubejs",
+   "nom": "KubeJS",
+   "cat": "Multijoueur et confort",
+   "desc": "Les scripts du serveur : progression, événements, Étoile brisée.",
+   "client": false
+  },
+  {
+   "id": "mysticrift_music",
+   "nom": "MysticRift Music",
+   "cat": "Multijoueur et confort",
+   "desc": "Une musique différente selon les biomes et les dimensions.",
+   "client": false
+  },
+  {
+   "id": "skinlayers3d",
+   "nom": "3D Skin Layers",
+   "cat": "Interface",
+   "desc": "Les skins en relief.",
+   "client": true
+  },
+  {
+   "id": "appleskin",
+   "nom": "AppleSkin",
+   "cat": "Interface",
+   "desc": "Ce que rapporte chaque aliment.",
+   "client": false
+  },
+  {
+   "id": "betteradvancements",
+   "nom": "Better Advancements",
+   "cat": "Interface",
+   "desc": "Un écran des progrès plus lisible.",
+   "client": true
+  },
+  {
+   "id": "controlling",
+   "nom": "Controlling",
+   "cat": "Interface",
+   "desc": "Recherche dans le menu des touches.",
+   "client": true
+  },
+  {
+   "id": "jade",
+   "nom": "Jade",
+   "cat": "Interface",
+   "desc": "Affiche ce que tu regardes.",
+   "client": false
+  },
+  {
+   "id": "jadeaddons",
+   "nom": "Jade Addons",
+   "cat": "Interface",
+   "desc": "Des infos Jade pour plus de mods.",
+   "client": false
+  },
+  {
+   "id": "jei",
+   "nom": "Just Enough Items",
+   "cat": "Interface",
+   "desc": "Toutes les recettes du pack (touches R et U).",
+   "client": false
+  },
+  {
+   "id": "justenoughprofessions",
+   "nom": "Just Enough Professions",
+   "cat": "Interface",
+   "desc": "Quel bloc donne quel métier aux villageois.",
+   "client": false
+  },
+  {
+   "id": "jeresources",
+   "nom": "Just Enough Resources",
+   "cat": "Interface",
+   "desc": "Où trouver chaque minerai, ce que lâche chaque monstre.",
+   "client": false
+  },
+  {
+   "id": "mousetweaks",
+   "nom": "Mouse Tweaks",
+   "cat": "Interface",
+   "desc": "Déplacer les objets plus vite à la souris.",
+   "client": true
+  },
+  {
+   "id": "simplytooltips",
+   "nom": "Simply Tooltips",
+   "cat": "Interface",
+   "desc": "Des infobulles plus belles (requis par Simply Swords).",
+   "client": false
+  },
+  {
+   "id": "xaerominimap",
+   "nom": "Xaero's Minimap",
+   "cat": "Interface",
+   "desc": "La minicarte et les points de passage.",
+   "client": false
+  },
+  {
+   "id": "xaeroworldmap",
+   "nom": "Xaero's World Map",
+   "cat": "Interface",
+   "desc": "La grande carte de ce que tu as exploré.",
+   "client": false
+  },
+  {
+   "id": "chunky",
+   "nom": "Chunky",
+   "cat": "Performance",
+   "desc": "Pré-génère le monde pour éviter le lag en exploration.",
+   "client": false
+  },
+  {
+   "id": "clumps",
+   "nom": "Clumps",
+   "cat": "Performance",
+   "desc": "Regroupe les orbes d'XP : moins de lag.",
+   "client": false
+  },
+  {
+   "id": "entityculling",
+   "nom": "Entity Culling",
+   "cat": "Performance",
+   "desc": "N'affiche pas ce que tu ne peux pas voir.",
+   "client": true
+  },
+  {
+   "id": "ferritecore",
+   "nom": "FerriteCore",
+   "cat": "Performance",
+   "desc": "Moins de mémoire utilisée.",
+   "client": false
+  },
+  {
+   "id": "immediatelyfast",
+   "nom": "ImmediatelyFast",
+   "cat": "Performance",
+   "desc": "L'interface et le texte plus rapides.",
+   "client": true
+  },
+  {
+   "id": "iris",
+   "nom": "Iris",
+   "cat": "Performance",
+   "desc": "Les shaders, avec Sodium.",
+   "client": true
+  },
+  {
+   "id": "modernfix",
+   "nom": "ModernFix",
+   "cat": "Performance",
+   "desc": "Démarrage plus rapide, moins de mémoire.",
+   "client": false
+  },
+  {
+   "id": "sodium",
+   "nom": "Sodium",
+   "cat": "Performance",
+   "desc": "Le rendu beaucoup plus rapide.",
+   "client": true
+  },
+  {
+   "id": "spark",
+   "nom": "spark",
+   "cat": "Performance",
+   "desc": "Mesure ce qui ralentit le jeu ou le serveur.",
+   "client": false
+  },
+  {
+   "id": "aces_spell_utils",
+   "nom": "Ace's Spell Utils",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Cataclysm Spellbooks.",
+   "client": false
+  },
+  {
+   "id": "architectury",
+   "nom": "Architectury",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "athena",
+   "nom": "Athena",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "azurelib",
+   "nom": "AzureLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'animations.",
+   "client": false
+  },
+  {
+   "id": "balm",
+   "nom": "Balm",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque des mods de BlayTheNinth.",
+   "client": false
+  },
+  {
+   "id": "bclib",
+   "nom": "BCLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de BetterEnd.",
+   "client": false
+  },
+  {
+   "id": "bookshelf",
+   "nom": "Bookshelf",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque des mods de Darkhax.",
+   "client": false
+  },
+  {
+   "id": "cloth_config",
+   "nom": "Cloth Config",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de configuration.",
+   "client": false
+  },
+  {
+   "id": "commonnetworking",
+   "nom": "Common Networking",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "cristellib",
+   "nom": "Cristel Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de structures.",
+   "client": false
+  },
+  {
+   "id": "cucumber",
+   "nom": "Cucumber",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Mystical Agriculture.",
+   "client": false
+  },
+  {
+   "id": "curios",
+   "nom": "Curios API",
+   "cat": "Bibliothèques",
+   "desc": "Les emplacements d'accessoires.",
+   "client": false
+  },
+  {
+   "id": "edivadlib",
+   "nom": "EdivadLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "fragmentum",
+   "nom": "Fragmentum",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'Aquamirae.",
+   "client": false
+  },
+  {
+   "id": "framework",
+   "nom": "Framework",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de MrCrayfish.",
+   "client": false
+  },
+  {
+   "id": "ftblibrary",
+   "nom": "FTB Library",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque des mods FTB.",
+   "client": false
+  },
+  {
+   "id": "fzzy_config",
+   "nom": "Fzzy Config",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de configuration.",
+   "client": false
+  },
+  {
+   "id": "geckolib",
+   "nom": "GeckoLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'animations.",
+   "client": false
+  },
+  {
+   "id": "glitchcore",
+   "nom": "GlitchCore",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Serene Seasons.",
+   "client": false
+  },
+  {
+   "id": "guideme",
+   "nom": "GuideME",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de guides en jeu.",
+   "client": false
+  },
+  {
+   "id": "irons_lib",
+   "nom": "Iron's Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'Iron's Spells.",
+   "client": false
+  },
+  {
+   "id": "kotlinforforge",
+   "nom": "Kotlin for Forge",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "lionfishapi",
+   "nom": "Lionfish API",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Cataclysm.",
+   "client": false
+  },
+  {
+   "id": "lithostitched",
+   "nom": "Lithostitched",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de génération du monde (Tectonic).",
+   "client": false
+  },
+  {
+   "id": "mafglib",
+   "nom": "MaFgLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Forgematica.",
+   "client": true
+  },
+  {
+   "id": "modonomicon",
+   "nom": "Modonomicon",
+   "cat": "Bibliothèques",
+   "desc": "Les livres-guides d'Occultism.",
+   "client": false
+  },
+  {
+   "id": "moonlight",
+   "nom": "Moonlight Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Supplementaries.",
+   "client": false
+  },
+  {
+   "id": "nirvana_lib",
+   "nom": "Nirvana Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "owo",
+   "nom": "owo-lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "playeranimator",
+   "nom": "Player Animator",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'animations du joueur.",
+   "client": false
+  },
+  {
+   "id": "prickle",
+   "nom": "Prickle",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "resourcefullib",
+   "nom": "Resourceful Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "rhino",
+   "nom": "Rhino",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de KubeJS.",
+   "client": false
+  },
+  {
+   "id": "searchables",
+   "nom": "Searchables",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Controlling.",
+   "client": true
+  },
+  {
+   "id": "smartbrainlib",
+   "nom": "SmartBrainLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'IA des créatures.",
+   "client": false
+  },
+  {
+   "id": "sophisticatedcore",
+   "nom": "Sophisticated Core",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque des mods Sophisticated.",
+   "client": false
+  },
+  {
+   "id": "supermartijn642configlib",
+   "nom": "SuperMartijn642 Config Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "supermartijn642corelib",
+   "nom": "SuperMartijn642 Core Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "terrablender",
+   "nom": "TerraBlender",
+   "cat": "Bibliothèques",
+   "desc": "Permet aux mods de biomes de cohabiter.",
+   "client": false
+  },
+  {
+   "id": "wover",
+   "nom": "WorldWeaver",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de BetterEnd.",
+   "client": false
+  },
+  {
+   "id": "wunderlib",
+   "nom": "WunderLib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de BetterEnd.",
+   "client": false
+  },
+  {
+   "id": "yungsapi",
+   "nom": "YUNG's API",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque des mods YUNG's.",
+   "client": false
+  }
+ ]
+}

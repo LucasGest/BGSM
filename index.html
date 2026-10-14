@@ -3,159 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Les réglages pour faire tourner le modpack La Survie des BGSM sans ramer.">
-<title>Guide performances BGSM</title>
+<meta name="description" content="La Survie des BGSM : le modpack Minecraft du serveur, ses mods, son histoire et comment bien le régler.">
+<title>La Survie des BGSM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
-<style>
-/* Layout : une colonne de lecture ; chaque section = un réglage concret, avec la valeur à mettre en évidence à droite (tableaux réglage → valeur). */
-:root{
-  --bg:#f3f4ef; --surface:#ffffff; --sunken:#e9ebe3; --fg:#1c231f; --muted:#5a655d; --line:#d3d8cc;
-  --accent:#3f7d3a; --accent-soft:#e2eedd; --gold:#9a6a12; --gold-soft:#f6ecd5; --warn:#a33a2a; --warn-soft:#f7e2de;
-  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#121613; --surface:#1a201b; --sunken:#151a16; --fg:#e3e9e3; --muted:#98a59b; --line:#2b342d;
-  --accent:#7ec86f; --accent-soft:#1d2f1c; --gold:#e3b456; --gold-soft:#33291a; --warn:#f08a77; --warn-soft:#3a1d18; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#121613; --surface:#1a201b; --sunken:#151a16; --fg:#e3e9e3; --muted:#98a59b; --line:#2b342d;
-  --accent:#7ec86f; --accent-soft:#1d2f1c; --gold:#e3b456; --gold-soft:#33291a; --warn:#f08a77; --warn-soft:#3a1d18; color-scheme:dark}
-*{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6}
-.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 72px;display:flex;flex-direction:column;gap:36px}
-h1,h2{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
-h1{font-size:clamp(32px,6vw,46px);font-weight:800;line-height:1.05}
-h2{font-size:24px;font-weight:600;display:flex;gap:12px;align-items:baseline}
-h2 .step{font-family:var(--f-mono);font-size:13px;color:var(--accent);font-weight:500;letter-spacing:.06em}
-p{margin:0;max-width:65ch}
-.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
-header{display:flex;flex-direction:column;gap:12px}
-.lead{font-size:18px;color:var(--muted)}
-section{display:flex;flex-direction:column;gap:14px}
-.muted{color:var(--muted)}
-code,kbd{font-family:var(--f-mono);font-size:.88em;background:var(--sunken);border:1px solid var(--line);border-radius:4px;padding:1px 6px;word-break:break-word}
-.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:15px}
-.path span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2px 8px}
-.path i{font-style:normal;color:var(--muted)}
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:9px 14px;background:var(--sunken);border-bottom:1px solid var(--line)}
-td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
-td.v{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--accent);white-space:nowrap}
-.ram{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.ram div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
-.ram div.best{border-color:var(--accent);background:var(--accent-soft)}
-.ram b{font-family:var(--f-display);font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
-.ram span{font-size:14px;color:var(--muted)}
-ul.list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
-.note{border-left:3px solid var(--gold);background:var(--gold-soft);padding:12px 16px;border-radius:0 8px 8px 0;font-size:15px}
-.note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
-.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.compare div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
-.compare h3{margin:0;font-family:var(--f-display);font-size:18px;font-weight:600}
-.cmd{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.cmd code{font-size:15px;padding:6px 10px}
-button{font:500 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:5px;padding:5px 10px;cursor:pointer}
-button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-a{color:var(--accent)}
-footer{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<nav class="nav" aria-label="Navigation principale"><div class="nav-in">
+  <a class="brand" href="index.html">La Survie <span>des BGSM</span></a>
+  <a class="lien" href="index.html" aria-current="page">Accueil</a>
+  <a class="lien" href="mods.html">Les mods</a>
+  <a class="lien" href="serveur.html">Le but du serveur</a>
+  <a class="lien" href="parametrage.html">Paramétrage</a>
+</div></nav>
 
-<div class="wrap">
-  <header>
-    <span class="eyebrow">La Survie des BGSM · NeoForge 1.21.1 · ~200 mods</span>
-    <h1>Faire tourner le pack sans ramer</h1>
-    <p class="lead">Les réglages qui comptent vraiment pour ton PC, dans l'ordre où ils font la plus grosse différence. Dix minutes à faire une fois.</p>
+<main class="wrap">
+  <header class="page">
+    <span class="eyebrow">Modpack · Minecraft 1.21.1 · NeoForge</span>
+    <h1>Un monde à explorer, une étoile à reforger</h1>
+    <p class="lead">La Survie des BGSM, c'est un serveur de survie entre amis : de l'aventure, des boss, de la magie, un peu de tech, beaucoup de cuisine et de construction. Et une histoire que tout le serveur écrit ensemble.</p>
   </header>
 
+  <div class="facts" aria-label="Le pack en chiffres">
+    <div><b>~200</b><span>mods</span></div>
+    <div><b>5</b><span>dimensions en plus</span></div>
+    <div><b>30+</b><span>boss</span></div>
+    <div><b>580+</b><span>quêtes</span></div>
+  </div>
+
   <section>
-    <h2><span class="step">1</span>La mémoire (RAM) dans CurseForge</h2>
-    <p>C'est le réglage le plus important. Avec environ 200 mods, Minecraft a besoin de place, mais <b>trop</b> de RAM fait aussi saccader le jeu (le nettoyage de la mémoire devient long).</p>
-    <div class="ram">
-      <div><b>6 Go</b><span>minimum, PC avec 12 Go ou moins</span></div>
-      <div class="best"><b>8 Go</b><span>recommandé pour presque tout le monde</span></div>
-      <div><b>10 Go</b><span>maximum utile, PC avec 32 Go ou plus</span></div>
+    <h2>Par où commencer</h2>
+    <div class="cards">
+      <a class="card" href="serveur.html"><span class="num">01</span><h3>Le but du serveur</h3><p>L'Étoile brisée, l'histoire en 8 actes, les événements et le Démiurge.</p></a>
+      <a class="card" href="parametrage.html"><span class="num">02</span><h3>Paramétrage</h3><p>RAM, réglages vidéo, shaders : à faire une fois avant de jouer.</p></a>
+      <a class="card" href="mods.html"><span class="num">03</span><h3>Les mods</h3><p>La liste complète, rangée par thème, avec une phrase pour chacun.</p></a>
     </div>
-    <div class="path"><span>CurseForge</span><i>→</i><span>⚙ Paramètres (en bas à gauche)</span><i>→</i><span>Minecraft</span><i>→</i><span>Java Settings</span><i>→</i><span>Allocated Memory</span></div>
-    <p class="muted">Laisse toujours au moins la moitié de la RAM de ton PC à Windows, Discord et le reste.</p>
   </section>
 
   <section>
-    <h2><span class="step">2</span>Les réglages vidéo</h2>
-    <p>Dans le jeu : <b>Options → Paramètres vidéo</b>. Le pack utilise Sodium, donc le menu est réparti en onglets.</p>
-    <div class="tablewrap"><table>
-      <thead><tr><th>Réglage</th><th>Valeur conseillée</th><th>Pourquoi</th></tr></thead>
-      <tbody>
-        <tr><td>Distance de rendu</td><td class="v">8 à 10</td><td>Le plus gros impact sur les FPS. Au-delà de 10, tu ne vois de toute façon rien de plus sur le serveur.</td></tr>
-        <tr><td>Graphismes</td><td class="v">Rapides</td><td>Feuilles opaques : beaucoup de FPS gagnés dans les forêts.</td></tr>
-        <tr><td>Nuages</td><td class="v">Rapides ou Non</td><td>Les nuages détaillés coûtent cher.</td></tr>
-        <tr><td>Particules</td><td class="v">Réduites</td><td>Les combats de boss et la magie en génèrent énormément.</td></tr>
-        <tr><td>Ombres des entités</td><td class="v">Non</td><td>Gain net, presque invisible en jeu.</td></tr>
-        <tr><td>FPS max</td><td class="v">Ta fréquence d'écran</td><td>60, 144… Inutile de faire chauffer la carte graphique au-delà.</td></tr>
-        <tr><td>Niveaux de mipmap</td><td class="v">2</td><td>Bon compromis netteté et performance.</td></tr>
-      </tbody>
-    </table></div>
-  </section>
-
-  <section>
-    <h2><span class="step">3</span>Les shaders</h2>
-    <p>Les shaders sont beaux mais très gourmands. Si tu en veux, prends <b>Complementary Reimagined</b> avec le profil <b>Low</b> ou <b>Medium</b>.</p>
-    <p>Pour les activer ou les couper : <b>Options → Paramètres vidéo → Shader Packs</b>. Coupe-les pour les combats de boss si ça rame.</p>
-    <div class="note">Si ton jeu tourne sous 40 FPS sans shaders, n'en mets pas : règle d'abord les points 1 et 2.</div>
-  </section>
-
-  <section>
-    <h2><span class="step">4</span>Ton PC, hors du jeu</h2>
+    <h2>Rejoindre le serveur</h2>
     <ul class="list">
-      <li><b>PC portable :</b> branche le chargeur et force la carte graphique dédiée pour Java (Paramètres Windows → Système → Affichage → Graphiques → ajouter <code>javaw.exe</code> → Hautes performances).</li>
-      <li><b>Pilotes graphiques à jour</b> (NVIDIA, AMD ou Intel).</li>
-      <li><b>Ferme les onglets Chrome</b> et les jeux en arrière-plan : ils mangent la RAM et le processeur.</li>
-      <li><b>Discord :</b> désactive l'overlay en jeu (Paramètres → Overlay de jeu).</li>
+      <li>Installe <b>CurseForge</b> et le modpack <b>La Survie des BGSM</b> (le lien est sur le Discord).</li>
+      <li>Règle ta RAM et ta vidéo avec la page <a href="parametrage.html">Paramétrage</a>.</li>
+      <li>Lance le jeu, puis <b>Multijoueur → Ajouter un serveur</b> avec l'adresse donnée sur le Discord.</li>
+      <li>À ta première connexion, lis le livre <b>« L'Étoile brisée »</b> que tu reçois, puis ouvre le livre de quêtes.</li>
     </ul>
+    <div class="note">N'ajoute ni ne retire aucun mod toi-même : ta liste doit être identique à celle du serveur, sinon la connexion est refusée.</div>
   </section>
+</main>
 
-  <section>
-    <h2><span class="step">5</span>Ça rame : c'est ton PC ou le serveur ?</h2>
-    <div class="compare">
-      <div><h3>Ton PC (FPS bas)</h3><p>L'image saccade, même quand tu ne bouges pas. Le compteur de FPS (touche <kbd>F3</kbd>, en haut à gauche) est bas.</p><p class="muted">→ Reprends les points 1 à 4.</p></div>
-      <div><h3>Le serveur (lag)</h3><p>L'image est fluide, mais les blocs cassés réapparaissent, les monstres se téléportent, les coffres mettent du temps à s'ouvrir.</p><p class="muted">→ Ce n'est pas ton PC : préviens l'admin.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="step">6</span>Envoyer un diagnostic à l'admin</h2>
-    <p>Le pack contient <b>spark</b>, un outil qui mesure ce qui ralentit le jeu. Quand ça rame, tape dans le chat :</p>
-    <div class="cmd"><code id="c1">/sparkc profiler start</code><button type="button" data-copy="c1">Copier</button></div>
-    <p>Joue normalement 1 à 2 minutes, puis :</p>
-    <div class="cmd"><code id="c2">/sparkc profiler stop</code><button type="button" data-copy="c2">Copier</button></div>
-    <p>spark affiche un lien dans le chat. Clique dessus pour le copier et envoie-le à l'admin sur Discord. Il verra exactement quel mod pose problème.</p>
-    <p class="muted">En cas de crash : CurseForge → clic droit sur le profil → <b>Open Folder</b> → dossier <code>crash-reports</code>. Envoie le fichier le plus récent.</p>
-  </section>
-
-  <section>
-    <h2><span class="step">7</span>Ce que le pack fait déjà pour toi</h2>
-    <p>Ces mods d'optimisation sont déjà installés, il n'y a rien à ajouter : <b>Sodium</b> (rendu), <b>ImmediatelyFast</b> (interface), <b>Entity Culling</b> (n'affiche pas ce que tu ne vois pas), <b>ModernFix</b> (démarrage et mémoire), <b>FerriteCore</b> (mémoire).</p>
-    <div class="note warn"><b>N'ajoute pas de mods toi-même.</b> Un mod en plus ou en moins peut t'empêcher de rejoindre le serveur (« Mismatched mod list »). Les mods qu'on te conseille sur internet, comme Canary, n'existent souvent pas pour notre version : demande d'abord.</div>
-    <p class="muted">Premier lancement long (2 à 4 minutes) : c'est normal avec autant de mods, les suivants sont plus rapides.</p>
-  </section>
-
-  <footer>Une question ? Demande sur le Discord des BGSM, avec une capture d'écran de <kbd>F3</kbd> si possible.</footer>
-</div>
-
-<script>
-document.querySelectorAll('button[data-copy]').forEach(b => {
-  b.addEventListener('click', async () => {
-    const el = document.getElementById(b.dataset.copy);
-    try { await navigator.clipboard.writeText(el.textContent); b.textContent = 'Copié'; }
-    catch (e) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionné'; }
-    setTimeout(() => { b.textContent = 'Copier'; }, 1800);
-  });
-});
-</script>
+<footer class="site">La Survie des BGSM · serveur privé entre amis · questions sur le Discord.</footer>
 </body>
 </html>

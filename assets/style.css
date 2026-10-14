@@ -1,0 +1,106 @@
+/* La Survie des BGSM — feuille de style commune.
+   Mise en page : barre de navigation fixe en haut, une colonne de lecture centrée (760 px),
+   la page des mods en grille plus large (1080 px). */
+:root{
+  --bg:#f3f4ef; --surface:#ffffff; --sunken:#e9ebe3; --fg:#1c231f; --muted:#5a655d; --line:#d3d8cc;
+  --accent:#3f7d3a; --accent-soft:#e2eedd; --gold:#9a6a12; --gold-soft:#f6ecd5; --warn:#a33a2a; --warn-soft:#f7e2de;
+  --violet:#6a3fa0; --violet-soft:#eee5f7;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121613; --surface:#1a201b; --sunken:#151a16; --fg:#e3e9e3; --muted:#98a59b; --line:#2b342d;
+  --accent:#7ec86f; --accent-soft:#1d2f1c; --gold:#e3b456; --gold-soft:#33291a; --warn:#f08a77; --warn-soft:#3a1d18;
+  --violet:#bb9ae6; --violet-soft:#2a2136; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121613; --surface:#1a201b; --sunken:#151a16; --fg:#e3e9e3; --muted:#98a59b; --line:#2b342d;
+  --accent:#7ec86f; --accent-soft:#1d2f1c; --gold:#e3b456; --gold-soft:#33291a; --warn:#f08a77; --warn-soft:#3a1d18;
+  --violet:#bb9ae6; --violet-soft:#2a2136; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- navigation */
+.nav{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding-inline:16px;display:flex;align-items:center;gap:8px 20px;flex-wrap:wrap;min-height:56px;padding-block:8px}
+.brand{font-family:var(--f-display);font-weight:800;font-size:19px;color:var(--fg);text-decoration:none;letter-spacing:-.01em;margin-right:auto}
+.brand span{color:var(--accent)}
+.nav a.lien{color:var(--muted);text-decoration:none;font-weight:500;font-size:15px;padding:4px 2px;border-bottom:2px solid transparent}
+.nav a.lien:hover{color:var(--fg)}
+.nav a.lien[aria-current="page"]{color:var(--fg);border-bottom-color:var(--accent)}
+
+/* ---------- mise en page */
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:32px 72px;display:flex;flex-direction:column;gap:40px}
+.wrap.large{max-width:1080px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(32px,6vw,48px);font-weight:800;line-height:1.05}
+h2{font-size:26px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+h2 .step{font-family:var(--f-mono);font-size:13px;color:var(--accent);font-weight:500;letter-spacing:.06em}
+h3{font-size:19px;font-weight:600}
+p{margin:0;max-width:65ch}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+header.page{display:flex;flex-direction:column;gap:12px}
+.lead{font-size:18px;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:14px}
+.muted{color:var(--muted)}
+code,kbd{font-family:var(--f-mono);font-size:.88em;background:var(--sunken);border:1px solid var(--line);border-radius:4px;padding:1px 6px;word-break:break-word}
+ul.list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px;max-width:65ch}
+
+/* ---------- composants */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--fg);min-width:0}
+a.card:hover{border-color:var(--accent)}
+.card .num{font-family:var(--f-mono);font-size:12px;color:var(--accent);letter-spacing:.08em}
+.card p{color:var(--muted);font-size:15px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.facts div{background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.facts b{font-family:var(--f-display);font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.facts span{font-size:13px;color:var(--muted)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{text-align:left;font-weight:600;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:9px 14px;background:var(--sunken);border-bottom:1px solid var(--line)}
+td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:top}
+td.v{font-family:var(--f-mono);font-size:14px;font-weight:500;color:var(--accent);white-space:nowrap}
+.note{border-left:3px solid var(--gold);background:var(--gold-soft);padding:12px 16px;border-radius:0 8px 8px 0;font-size:15px}
+.note.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.quote{border-left:3px solid var(--violet);background:var(--violet-soft);padding:14px 18px;border-radius:0 8px 8px 0;font-style:italic}
+.quote b{font-style:normal;color:var(--violet)}
+.path{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:15px}
+.path span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:2px 8px}
+.path i{font-style:normal;color:var(--muted)}
+.ram{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ram div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.ram div.best{border-color:var(--accent);background:var(--accent-soft)}
+.ram b{font-family:var(--f-display);font-size:26px;font-weight:800;font-variant-numeric:tabular-nums}
+.ram span{font-size:14px;color:var(--muted)}
+.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.compare div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.cmd{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cmd code{font-size:15px;padding:6px 10px}
+button{font:500 13px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:5px;padding:5px 10px;cursor:pointer}
+.timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.timeline li{position:relative;padding:0 0 16px 22px;display:flex;flex-direction:column;gap:2px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.timeline li b{font-family:var(--f-display);font-size:17px}
+.timeline li span{color:var(--muted);font-size:15px}
+
+/* ---------- page des mods */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.filters label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);flex:1 1 200px}
+.filters input,.filters select{font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-width:0}
+.chk{flex:0 0 auto !important;flex-direction:row !important;align-items:center;gap:8px !important;padding-bottom:9px}
+.cat-title{display:flex;align-items:baseline;gap:10px;margin-top:8px}
+.cat-title span{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.grid-mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.mod{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.mod b{font-weight:600}
+.mod p{font-size:14px;color:var(--muted)}
+.badge{align-self:flex-start;font-size:11px;font-family:var(--f-mono);letter-spacing:.04em;padding:1px 7px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.compteur{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+
+footer.site{max-width:1080px;margin:0 auto;padding:20px 16px 40px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

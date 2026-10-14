@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Les réglages pour faire tourner le modpack La Survie des BGSM sans ramer.">
+<title>Paramétrage · La Survie des BGSM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="nav" aria-label="Navigation principale"><div class="nav-in">
+  <a class="brand" href="index.html">La Survie <span>des BGSM</span></a>
+  <a class="lien" href="index.html">Accueil</a>
+  <a class="lien" href="mods.html">Les mods</a>
+  <a class="lien" href="serveur.html">Le but du serveur</a>
+  <a class="lien" href="parametrage.html" aria-current="page">Paramétrage</a>
+</div></nav>
+
+<main class="wrap">
+  <header class="page">
+    <span class="eyebrow">Avant de jouer</span>
+    <h1>Faire tourner le pack sans ramer</h1>
+    <p class="lead">Les réglages qui comptent vraiment pour ton PC, dans l'ordre où ils font la plus grosse différence. Dix minutes à faire une fois.</p>
+  </header>
+
+  <section>
+    <h2><span class="step">1</span>La mémoire (RAM) dans CurseForge</h2>
+    <p>C'est le réglage le plus important. Avec environ 200 mods, Minecraft a besoin de place, mais <b>trop</b> de RAM fait aussi saccader le jeu (le nettoyage de la mémoire devient long).</p>
+    <div class="ram">
+      <div><b>6 Go</b><span>minimum, PC avec 12 Go ou moins</span></div>
+      <div class="best"><b>8 Go</b><span>recommandé pour presque tout le monde</span></div>
+      <div><b>10 Go</b><span>maximum utile, PC avec 32 Go ou plus</span></div>
+    </div>
+    <div class="path"><span>CurseForge</span><i>→</i><span>⚙ Paramètres (en bas à gauche)</span><i>→</i><span>Minecraft</span><i>→</i><span>Java Settings</span><i>→</i><span>Allocated Memory</span></div>
+    <p class="muted">Laisse toujours au moins la moitié de la RAM de ton PC à Windows, Discord et le reste.</p>
+  </section>
+
+  <section>
+    <h2><span class="step">2</span>Les réglages vidéo</h2>
+    <p>Dans le jeu : <b>Options → Paramètres vidéo</b>. Le pack utilise Sodium, donc le menu est réparti en onglets.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Réglage</th><th>Valeur conseillée</th><th>Pourquoi</th></tr></thead>
+      <tbody>
+        <tr><td>Distance de rendu</td><td class="v">8 à 10</td><td>Le plus gros impact sur les FPS. Au-delà de 10, tu ne vois de toute façon rien de plus sur le serveur.</td></tr>
+        <tr><td>Graphismes</td><td class="v">Rapides</td><td>Feuilles opaques : beaucoup de FPS gagnés dans les forêts.</td></tr>
+        <tr><td>Nuages</td><td class="v">Rapides ou Non</td><td>Les nuages détaillés coûtent cher.</td></tr>
+        <tr><td>Particules</td><td class="v">Réduites</td><td>Les combats de boss et la magie en génèrent énormément.</td></tr>
+        <tr><td>Ombres des entités</td><td class="v">Non</td><td>Gain net, presque invisible en jeu.</td></tr>
+        <tr><td>FPS max</td><td class="v">Ta fréquence d'écran</td><td>60, 144… Inutile de faire chauffer la carte graphique au-delà.</td></tr>
+        <tr><td>Niveaux de mipmap</td><td class="v">2</td><td>Bon compromis netteté et performance.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2><span class="step">3</span>Les shaders</h2>
+    <p>Les shaders sont beaux mais très gourmands. Si tu en veux, prends <b>Complementary Reimagined</b> avec le profil <b>Low</b> ou <b>Medium</b>.</p>
+    <p>Pour les activer ou les couper : <b>Options → Paramètres vidéo → Shader Packs</b>. Coupe-les pour les combats de boss si ça rame.</p>
+    <div class="note">Si ton jeu tourne sous 40 FPS sans shaders, n'en mets pas : règle d'abord les points 1 et 2.</div>
+  </section>
+
+  <section>
+    <h2><span class="step">4</span>Ton PC, hors du jeu</h2>
+    <ul class="list">
+      <li><b>PC portable :</b> branche le chargeur et force la carte graphique dédiée pour Java (Paramètres Windows → Système → Affichage → Graphiques → ajouter <code>javaw.exe</code> → Hautes performances).</li>
+      <li><b>Pilotes graphiques à jour</b> (NVIDIA, AMD ou Intel).</li>
+      <li><b>Ferme les onglets Chrome</b> et les jeux en arrière-plan : ils mangent la RAM et le processeur.</li>
+      <li><b>Discord :</b> désactive l'overlay en jeu (Paramètres → Overlay de jeu).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="step">5</span>Ça rame : c'est ton PC ou le serveur ?</h2>
+    <div class="compare">
+      <div><h3>Ton PC (FPS bas)</h3><p>L'image saccade, même quand tu ne bouges pas. Le compteur de FPS (touche <kbd>F3</kbd>, en haut à gauche) est bas.</p><p class="muted">→ Reprends les points 1 à 4.</p></div>
+      <div><h3>Le serveur (lag)</h3><p>L'image est fluide, mais les blocs cassés réapparaissent, les monstres se téléportent, les coffres mettent du temps à s'ouvrir.</p><p class="muted">→ Ce n'est pas ton PC : préviens l'admin.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="step">6</span>Envoyer un diagnostic à l'admin</h2>
+    <p>Le pack contient <b>spark</b>, un outil qui mesure ce qui ralentit le jeu. Quand ça rame, tape dans le chat :</p>
+    <div class="cmd"><code id="c1">/sparkc profiler start</code><button type="button" data-copy="c1">Copier</button></div>
+    <p>Joue normalement 1 à 2 minutes, puis :</p>
+    <div class="cmd"><code id="c2">/sparkc profiler stop</code><button type="button" data-copy="c2">Copier</button></div>
+    <p>spark affiche un lien dans le chat. Clique dessus pour le copier et envoie-le à l'admin sur Discord. Il verra exactement quel mod pose problème.</p>
+    <p class="muted">En cas de crash : CurseForge → clic droit sur le profil → <b>Open Folder</b> → dossier <code>crash-reports</code>. Envoie le fichier le plus récent.</p>
+  </section>
+
+  <section>
+    <h2><span class="step">7</span>Ce que le pack fait déjà pour toi</h2>
+    <p>Ces mods d'optimisation sont déjà installés, il n'y a rien à ajouter : <b>Sodium</b> (rendu), <b>ImmediatelyFast</b> (interface), <b>Entity Culling</b> (n'affiche pas ce que tu ne vois pas), <b>ModernFix</b> (démarrage et mémoire), <b>FerriteCore</b> (mémoire).</p>
+    <div class="note warn"><b>N'ajoute pas de mods toi-même.</b> Un mod en plus ou en moins peut t'empêcher de rejoindre le serveur (« Mismatched mod list »). Les mods qu'on te conseille sur internet, comme Canary, n'existent souvent pas pour notre version : demande d'abord.</div>
+    <p class="muted">Premier lancement long (2 à 4 minutes) : c'est normal avec autant de mods, les suivants sont plus rapides.</p>
+  </section>
+
+</main>
+
+<footer class="site">Une question ? Demande sur le Discord des BGSM, avec une capture d'écran de <kbd>F3</kbd> si possible.</footer>
+<script>
+document.querySelectorAll('button[data-copy]').forEach(b => {
+  b.addEventListener('click', async () => {
+    const el = document.getElementById(b.dataset.copy);
+    try { await navigator.clipboard.writeText(el.textContent); b.textContent = 'Copié'; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Sélectionné'; }
+    setTimeout(() => { b.textContent = 'Copier'; }, 1800);
+  });
+});
+</script>
+</body>
+</html>
