@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<script>/* Site verrouillé jusqu'à l'ouverture (16/10/2026 20:00 Paris). Aperçu admin : ajouter ?apercu à l'adresse (valable toute la visite). */(function(){var L=Date.parse('2026-10-16T20:00:00+02:00'),a=/apercu/.test(location.search);try{if(a)sessionStorage.setItem('bgsm_apercu','1');a=a||sessionStorage.getItem('bgsm_apercu')==='1'}catch(e){}if(Date.now()<L&&!a)location.replace('/');})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ta fiche de progression sur La Survie des BGSM : actes, boss, fragments, paliers. Coche au fur et à mesure.">
+<title>Ma fiche · La Survie des BGSM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Fiche joueur : cases à cocher enregistrées dans le navigateur du joueur */
+.profil{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.profil label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);flex:1 1 220px}
+.profil input{font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-width:0}
+.total{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.total-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.total b{font-family:var(--f-display);font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.barre{height:8px;border-radius:999px;background:var(--sunken);border:1px solid var(--line);overflow:hidden}
+.barre i{display:block;height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .25s}
+.bloc{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.bloc-tete{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 16px;background:var(--sunken);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.bloc-tete h3{font-size:17px}
+.bloc-tete span{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.bloc-tete .date{color:var(--accent)}
+.bloc .barre{border:0;border-radius:0;height:4px}
+.items{list-style:none;margin:0;padding:6px 0}
+.items label{display:flex;gap:12px;align-items:flex-start;padding:7px 16px;cursor:pointer}
+.items label:hover{background:var(--sunken)}
+.items input{width:18px;height:18px;margin:3px 0 0;accent-color:var(--accent);flex:0 0 auto}
+.items .t{display:flex;flex-direction:column;gap:1px;min-width:0}
+.items .t small{color:var(--muted);font-size:13.5px}
+.items input:checked + .t > span{text-decoration:line-through;text-decoration-color:var(--muted);color:var(--muted)}
+.bloc.fini{border-color:var(--accent)}
+.bloc.fini .bloc-tete{background:var(--accent-soft)}
+.groupe{display:flex;flex-direction:column;gap:14px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.actions button{padding:8px 14px;font-size:14px}
+#code{width:100%;font:13px var(--f-mono);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 10px;min-height:70px;resize:vertical}
+.etat{font-size:14px;color:var(--muted);min-height:1.4em}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Navigation principale"><div class="nav-in">
+  <a class="brand" href="accueil.html">La Survie <span>des BGSM</span></a>
+  <a class="lien" href="accueil.html">Accueil</a>
+  <a class="lien" href="mods.html">Les mods</a>
+  <a class="lien" href="serveur.html">Le but du serveur</a>
+  <a class="lien" href="fiche.html" aria-current="page">Ma fiche</a>
+  <a class="lien" href="parametrage.html">Paramétrage</a>
+</div></nav>
+
+<main class="wrap">
+  <header class="page">
+    <span class="eyebrow">Ta progression</span>
+    <h1>Ma fiche de joueur</h1>
+    <p class="lead">Coche ce que tu as fait au fur et à mesure. Ta fiche est enregistrée sur ce navigateur : tu la retrouves en revenant. Personne d'autre ne la voit.</p>
+  </header>
+
+  <div class="profil">
+    <label>Ton pseudo en jeu<input id="pseudo" type="text" maxlength="24" placeholder="ex. ADT_Purple" autocomplete="nickname"></label>
+    <label>Ta voie (le fragment que tu vises)<input id="voie" type="text" maxlength="40" placeholder="ex. la Machine, le Banquet…"></label>
+  </div>
+
+  <div class="total" aria-live="polite">
+    <div class="total-top"><span class="muted" id="qui">Avancement total</span><b id="pct">0 %</b></div>
+    <div class="barre"><i id="barre-totale"></i></div>
+    <span class="muted" id="detail">0 objectif sur 0</span>
+  </div>
+
+  <section>
+    <h2><span class="step">1</span>Les 8 actes</h2>
+    <p class="muted">Un acte s'ouvre chaque samedi à 20h, ou plus tôt si quelqu'un bat son boss gardien. En jeu : <code>/actes</code>.</p>
+    <div class="groupe" id="actes"></div>
+  </section>
+
+  <section>
+    <h2><span class="step">2</span>Les neuf fragments</h2>
+    <p class="muted">Coche ceux que <b>toi</b> tu as forgés. Le compteur du serveur, lui, s'affiche en jeu.</p>
+    <div class="groupe" id="fragments"></div>
+  </section>
+
+  <section>
+    <h2><span class="step">3</span>Les paliers</h2>
+    <div class="groupe" id="paliers"></div>
+  </section>
+
+  <section>
+    <h2><span class="step">4</span>Les à-côtés</h2>
+    <div class="groupe" id="bonus"></div>
+  </section>
+
+  <section>
+    <h2><span class="step">5</span>Changer d'appareil</h2>
+    <p>Ta fiche reste sur ce navigateur. Pour la retrouver sur un autre PC ou sur ton téléphone, copie ton code ici et colle-le là-bas.</p>
+    <div class="actions">
+      <button type="button" id="b-copier">Copier mon code</button>
+      <button type="button" id="b-charger">Charger un code</button>
+      <button type="button" id="b-raz">Tout effacer</button>
+    </div>
+    <textarea id="code" aria-label="Code de ta fiche" placeholder="Ton code apparaît ici. Pour charger une fiche, colle son code puis clique sur « Charger un code »."></textarea>
+    <p class="etat" id="etat" role="status"></p>
+  </section>
+</main>
+
+<footer class="site">La Survie des BGSM · serveur privé entre amis · questions sur le Discord.</footer>
+
+<script>
+// ---------- Contenu de la fiche (identifiants courts : ne pas les changer, ils servent à la sauvegarde)
+const ACTES = [
+  { titre: 'Acte I · Le monde éveillé', date: 'ven. 16/10', items: [
+    ['a1_livre', "Lire le livre « L'Étoile brisée »"],
+    ['a1_village', 'Trouver un village et une taverne'],
+    ['a1_epreuves', 'Explorer une chambre des épreuves'],
+    ['a1_wrought', 'Battre le Wroughtnaut', 'Dans sa chambre souterraine (Mowzie\'s Mobs)'],
+    ['a1_frostmaw', 'Battre le Frostmaw', "Boss gardien : il ouvre l'Acte II en avance"] ] },
+  { titre: 'Acte II · Les flammes', date: 'sam. 24/10', items: [
+    ['a2_nether', 'Entrer dans le Nether'],
+    ['a2_fort', 'Explorer une forteresse et un bastion'],
+    ['a2_ignis', 'Battre Ignis'],
+    ['a2_monstro', 'Battre la Monstruosité de netherite'],
+    ['a2_wither', 'Battre le Wither', "Boss gardien : il ouvre l'Acte III"] ] },
+  { titre: 'Acte III · Les cieux', date: 'sam. 31/10', items: [
+    ['a3_aether', "Entrer dans l'Aether"],
+    ['a3_slider', 'Battre le Slider (donjon de bronze)'],
+    ['a3_valk', "Battre la Reine des Valkyries (donjon d'argent)"],
+    ['a3_soleil', "Battre l'Esprit du soleil (donjon d'or)", "Boss gardien : il ouvre l'Acte IV"] ] },
+  { titre: 'Acte IV · Le crépuscule', date: 'sam. 07/11', items: [
+    ['a4_twilight', 'Entrer dans la Twilight Forest'],
+    ['a4_naga', 'Battre la Naga'],
+    ['a4_liche', 'Battre la Liche'],
+    ['a4_mino', 'Battre le Minoshroom'],
+    ['a4_hydre', "Battre l'Hydre"],
+    ['a4_urghast', "Battre l'Ur-Ghast"],
+    ['a4_reine', 'Battre la Reine des neiges', "Boss gardien : elle ouvre l'Acte V"] ] },
+  { titre: 'Acte V · Les profondeurs', date: 'sam. 14/11', items: [
+    ['a5_cite', 'Explorer une cité antique'],
+    ['a5_warden', 'Battre le Warden'],
+    ['a5_otherside', "Entrer dans l'Otherside"],
+    ['a5_stalker', 'Battre le Stalker', "Boss gardien : il ouvre l'Acte VI"] ] },
+  { titre: 'Acte VI · Les océans', date: 'sam. 21/11', items: [
+    ['a6_pirates', 'Piller un avant-poste pirate'],
+    ['a6_cornelia', 'Battre la capitaine Cornelia'],
+    ['a6_leviathan', 'Battre le Léviathan', "Boss gardien : il ouvre l'Acte VII"],
+    ['a6_lune', 'Poser le pied sur la Lune', 'Fusée de niveau 1'],
+    ['a6_mars', 'Poser le pied sur Mars', 'Fusée de niveau 2'] ] },
+  { titre: 'Acte VII · Le néant', date: 'sam. 28/11', items: [
+    ['a7_end', "Entrer dans l'End"],
+    ['a7_dragon', 'Battre le dragon'],
+    ['a7_cite', "Explorer une cité de l'End et trouver des élytres"],
+    ['a7_guardian', "Battre l'Ender Guardian", "Boss gardien : il ouvre l'Acte VIII"] ] },
+  { titre: 'Acte VIII · Le créateur', date: 'sam. 05/12', items: [
+    ['a8_venus', 'Poser le pied sur Vénus ou Mercure', 'Fusée de niveau 3'],
+    ['a8_glacio', 'Poser le pied sur Glacio', 'Fusée de niveau 4'],
+    ['a8_fragment', 'Fabriquer un Fragment de création'],
+    ['a8_demiurge', 'Battre le Démiurge'] ] }
+]
+const FRAGMENTS = [{ titre: "L'Étoile des BGSM", items: [
+  ['f_machine', 'Fragment de la Machine', 'Mekanism et Refined Storage au maximum'],
+  ['f_mystique', 'Fragment Mystique', 'Le sommet de Mystical Agriculture'],
+  ['f_arcanes', 'Fragment des Arcanes', "Ars Nouveau, Occultism et Iron's Spells"],
+  ['f_cieux', 'Fragment des Cieux', "L'Aether et Deep Aether"],
+  ['f_sylvestre', 'Fragment Sylvestre', 'Les boss de fin du Twilight Forest'],
+  ['f_abysses', 'Fragment des Abysses', "Le Nether et l'Otherside"],
+  ['f_neant', 'Fragment du Néant', "L'End"],
+  ['f_banquet', 'Fragment du Banquet', 'La cuisine'],
+  ['f_aventure', "Fragment de l'Aventure", 'Les grands boss du monde'],
+  ['f_etoile', "Reforger l'Étoile et la poser au Grand Autel", 'Ensemble, avec les neuf fragments'] ] }]
+const PALIERS = [
+  { titre: 'Mystical Agriculture', items: [
+    ['m_1', 'Palier 1 : inferium'],
+    ['m_2', 'Palier 2 : prudentium', "Il faut de l'osmium (Mekanism)"],
+    ['m_3', 'Palier 3 : tertium', 'Il faut de la poudre de blaze (Nether)'],
+    ['m_4', 'Palier 4 : imperium', "Il faut de la zanite (Aether)"],
+    ['m_5', 'Palier 5 : supremium', 'Il faut un lingot ardent (Twilight Forest)'],
+    ['m_6', 'Palier 6 : insanium', 'Il faut un lingot de witherite (le Harbinger)'] ] },
+  { titre: 'Mekanism', items: [
+    ['k_avance', 'Circuit avancé'],
+    ['k_elite', 'Circuit élite', 'Il faut de la zanite (Aether)'],
+    ['k_ultime', 'Circuit ultime', "Il faut du résonarium (Otherside)"] ] },
+  { titre: 'Paliers du monde (Apotheosis)', items: [
+    ['p_frontier', 'Frontier', 'Les monstres deviennent plus forts, le butin aussi'],
+    ['p_ascent', 'Ascent'],
+    ['p_summit', 'Summit'],
+    ['p_pinnacle', 'Pinnacle', 'Le sommet'] ] }
+]
+const BONUS = [{ titre: 'La vie du serveur', items: [
+  ['b_eclat', "Ramasser un éclat d'étoile"],
+  ['b_sigil', "Améliorer une pièce d'équipement avec des éclats", 'Un sigil fabriqué avec des éclats'],
+  ['b_pluie', "Vivre une pluie d'étoiles"],
+  ['b_lune', 'Survivre à une Lune de sang'],
+  ['b_boss', 'Battre le boss de la semaine en premier'],
+  ['b_tresor', 'Trouver un coffre au trésor'],
+  ['b_defi', 'Participer à un défi communautaire réussi'],
+  ['b_contrat', 'Remplir un contrat de la semaine'],
+  ['b_base', 'Claimer sa base sur la carte'],
+  ['b_waystone', 'Activer une waystone loin de chez soi'] ] }]
+
+// ---------- Sauvegarde (navigateur du joueur ; tout est protégé si le stockage est bloqué)
+const CLE = 'bgsm_fiche_v1'
+let etat = { c: {}, pseudo: '', voie: '' }
+try { const s = JSON.parse(localStorage.getItem(CLE) || 'null'); if (s && typeof s === 'object') etat = Object.assign(etat, s) } catch (e) {}
+const sauver = () => { try { localStorage.setItem(CLE, JSON.stringify(etat)) } catch (e) {} }
+
+// ---------- Affichage
+const TOUS = []
+const rendre = (id, blocs) => {
+  const zone = document.getElementById(id)
+  blocs.forEach(b => {
+    const div = document.createElement('div'); div.className = 'bloc'
+    const tete = document.createElement('div'); tete.className = 'bloc-tete'
+    const h = document.createElement('h3'); h.textContent = b.titre
+    const info = document.createElement('span'); info.innerHTML = (b.date ? `<span class="date">${b.date}</span> · ` : '') + '<span class="n"></span>'
+    tete.append(h, info)
+    const barre = document.createElement('div'); barre.className = 'barre'; barre.innerHTML = '<i></i>'
+    const ul = document.createElement('ul'); ul.className = 'items'
+    b.items.forEach(([k, texte, aide]) => {
+      TOUS.push(k)
+      const li = document.createElement('li'); const lab = document.createElement('label')
+      const cb = document.createElement('input'); cb.type = 'checkbox'; cb.dataset.k = k; cb.checked = !!etat.c[k]
+      const t = document.createElement('span'); t.className = 't'
+      const s = document.createElement('span'); s.textContent = texte; t.append(s)
+      if (aide) { const sm = document.createElement('small'); sm.textContent = aide; t.append(sm) }
+      lab.append(cb, t); li.append(lab); ul.append(li)
+    })
+    div.append(tete, barre, ul); zone.append(div)
+  })
+}
+rendre('actes', ACTES); rendre('fragments', FRAGMENTS); rendre('paliers', PALIERS); rendre('bonus', BONUS)
+
+const maj = () => {
+  document.querySelectorAll('.bloc').forEach(b => {
+    const cbs = [...b.querySelectorAll('input[type=checkbox]')], n = cbs.filter(c => c.checked).length
+    b.querySelector('.n').textContent = `${n}/${cbs.length}`
+    b.querySelector('.barre i').style.width = (100 * n / cbs.length) + '%'
+    b.classList.toggle('fini', n === cbs.length)
+  })
+  const fait = TOUS.filter(k => etat.c[k]).length, p = Math.round(100 * fait / TOUS.length)
+  document.getElementById('pct').textContent = p + ' %'
+  document.getElementById('barre-totale').style.width = p + '%'
+  document.getElementById('detail').textContent = `${fait} objectif${fait > 1 ? 's' : ''} sur ${TOUS.length}`
+  document.getElementById('qui').textContent = etat.pseudo ? `Avancement de ${etat.pseudo}` : 'Avancement total'
+}
+document.addEventListener('change', e => {
+  const k = e.target.dataset && e.target.dataset.k
+  if (!k) return
+  if (e.target.checked) etat.c[k] = 1; else delete etat.c[k]
+  sauver(); maj()
+})
+const pseudo = document.getElementById('pseudo'), voie = document.getElementById('voie')
+pseudo.value = etat.pseudo || ''; voie.value = etat.voie || ''
+pseudo.addEventListener('input', () => { etat.pseudo = pseudo.value.trim(); sauver(); maj() })
+voie.addEventListener('input', () => { etat.voie = voie.value.trim(); sauver() })
+maj()
+
+// ---------- Changer d'appareil : un code texte (base64 du JSON)
+const code = document.getElementById('code'), msg = document.getElementById('etat')
+const dire = t => { msg.textContent = t }
+document.getElementById('b-copier').addEventListener('click', async () => {
+  code.value = btoa(unescape(encodeURIComponent(JSON.stringify(etat))))
+  try { await navigator.clipboard.writeText(code.value); dire('Code copié. Colle-le sur ton autre appareil.') }
+  catch (e) { code.select(); dire('Code affiché ci-dessus : sélectionne-le et copie-le.') }
+})
+document.getElementById('b-charger').addEventListener('click', () => {
+  try {
+    const s = JSON.parse(decodeURIComponent(escape(atob(code.value.trim()))))
+    if (!s || typeof s.c !== 'object') throw 0
+    etat = { c: s.c, pseudo: s.pseudo || '', voie: s.voie || '' }
+    sauver()
+    document.querySelectorAll('.items input').forEach(cb => { cb.checked = !!etat.c[cb.dataset.k] })
+    pseudo.value = etat.pseudo; voie.value = etat.voie; maj()
+    dire('Fiche chargée.')
+  } catch (e) { dire("Ce code n'est pas valide. Vérifie que tu l'as copié en entier.") }
+})
+document.getElementById('b-raz').addEventListener('click', () => {
+  if (!confirm('Effacer toute ta fiche ? Ça ne se rattrape pas.')) return
+  etat = { c: {}, pseudo: '', voie: '' }; sauver()
+  document.querySelectorAll('.items input').forEach(cb => { cb.checked = false })
+  pseudo.value = ''; voie.value = ''; code.value = ''; maj(); dire('Fiche effacée.')
+})
+</script>
+</body>
+</html>
