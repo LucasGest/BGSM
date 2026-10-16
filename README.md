@@ -4,7 +4,7 @@ Site statique du modpack *La Survie des BGSM* (Minecraft 1.21.1, NeoForge), en l
 
 | Page | Contenu |
 |---|---|
-| `index.html` | Page d'attente : compte à rebours jusqu'au 17/10/2026 20h00 (Paris), puis redirection vers l'accueil |
+| `index.html` | Page d'attente : compte à rebours jusqu'au 16/10/2026 20h00 (Paris), puis redirection vers l'accueil |
 | `accueil.html` | Accueil : présentation, comment rejoindre |
 | `mods.html` | La liste des ~200 mods, par thème, avec recherche (données : `assets/mods.json`) |
 | `serveur.html` | Le but du serveur : l'Étoile brisée, l'histoire en 8 actes, la progression, les événements, le Démiurge |
