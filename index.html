@@ -66,7 +66,7 @@ body.ouvert .open{display:flex}
   <span class="eyebrow">La Survie des BGSM</span>
   <h1>L'Étoile s'est brisée.</h1>
   <p class="sub">Un nouveau monde s'éveille.</p>
-  <p class="date">Vendredi <b>16 octobre</b> · <b>20h00</b></p>
+  <p class="date">Vendredi <b>16 octobre</b> · site <b>19h30</b> · serveur <b>20h00</b></p>
 
   <div class="count" role="timer" aria-live="off" aria-label="Temps avant l'ouverture">
     <div class="unit"><b id="j">--</b><span>jours</span></div>
@@ -88,7 +88,7 @@ body.ouvert .open{display:flex}
 
 <script>
 // ---------- compte à rebours (heure de Paris, été : UTC+2)
-const OUVERTURE = Date.parse('2026-10-16T20:00:00+02:00');
+const OUVERTURE = Date.parse('2026-10-16T19:30:00+02:00');
 const pad = n => String(n).padStart(2, '0');
 let redirige = false;
 function tick() {
