@@ -72,7 +72,29 @@
   </section>
 
   <section>
-    <h2><span class="step">4</span>Ton PC, hors du jeu</h2>
+    <h2><span class="step">4</span>L'inventaire et l'interface</h2>
+    <p>Deux mods changent l'apparence de l'inventaire. Ce n'est pas un bug, et chacun peut les régler à son goût : ça ne change rien pour les autres joueurs.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Ce que tu vois</th><th>Ce que c'est</th><th>Pour le changer</th></tr></thead>
+      <tbody>
+        <tr><td><b>Des cases en vert</b> quand tu survoles un objet</td><td>Inventory Profiles Next allume toutes les cases qui contiennent <b>le même objet</b> que celui sous ta souris. Pratique pour retrouver tes piles.</td><td>Onglet <i>Features</i> → <i>Enable Items Highlight</i></td></tr>
+        <tr><td><b>Des petites flèches roses</b> sur la hotbar</td><td>L'<b>auto refill</b> : quand une pile de ta hotbar se vide (blocs, torches, nourriture) ou qu'un outil va casser, elle est remplacée toute seule par une pile identique de ton inventaire. Les flèches montrent les cases surveillées.</td><td>Onglet <i>Auto Refill</i> → <i>Enable Auto Refill</i></td></tr>
+        <tr><td><b>Des boutons de tri</b> en haut des inventaires et des coffres</td><td>Trier, ranger par colonnes ou par lignes, tout déplacer d'un coup.</td><td>Onglet <i>Gui Settings</i> → les options <i>Show the … button</i></td></tr>
+        <tr><td><b>Un cadenas</b> sur une case</td><td>Une case verrouillée : le tri et le « tout déplacer » n'y touchent pas. Idéal pour ton épée ou ta pioche.</td><td><kbd>Alt</kbd> + clic gauche sur la case pour verrouiller ou déverrouiller</td></tr>
+        <tr><td><b>Les menus en sombre</b></td><td>Dark Mode Everywhere passe les interfaces en mode sombre.</td><td>Bouton <b>Dark Mode</b> en bas à gauche de l'inventaire : clique pour changer de thème ou revenir au clair</td></tr>
+      </tbody>
+    </table></div>
+    <div class="path"><span>Échap</span><i>→</i><span>Mods</span><i>→</i><span>Inventory Profiles Next</span><i>→</i><span>Config</span></div>
+    <p class="muted">Conseil : garde l'auto refill, il évite de tomber à court de blocs ou de casser ta meilleure pioche en plein minage.</p>
+    <h3>Forgematica : l'activer ou le désactiver</h3>
+    <p><b>Forgematica</b> affiche des plans de construction (schematics) en hologramme, pour construire bloc par bloc, comme le Grand Autel. Il est <b>désactivé par défaut</b> pour alléger le jeu. Le serveur ne le vérifie pas : chacun l'allume s'il en a besoin.</p>
+    <div class="path"><span>CurseForge</span><i>→</i><span>le profil La Survie des BGSM</span><i>→</i><span>onglet Mods</span><i>→</i><span>cherche « Forgematica »</span><i>→</i><span>clique sur l'interrupteur à droite</span></div>
+    <p>Allume aussi <b>MaFgLib</b> de la même façon : c'est sa bibliothèque, Forgematica ne démarre pas sans elle. Pour l'éteindre, recommence et coupe les deux.</p>
+    <p class="muted">Fais-le jeu fermé. Les plans se rangent dans le dossier <code>schematics</code> du profil (CurseForge → clic droit sur le profil → Open Folder).</p>
+  </section>
+
+  <section>
+    <h2><span class="step">5</span>Ton PC, hors du jeu</h2>
     <ul class="list">
       <li><b>PC portable :</b> branche le chargeur et force la carte graphique dédiée pour Java (Paramètres Windows → Système → Affichage → Graphiques → ajouter <code>javaw.exe</code> → Hautes performances).</li>
       <li><b>Pilotes graphiques à jour</b> (NVIDIA, AMD ou Intel).</li>
@@ -82,15 +104,15 @@
   </section>
 
   <section>
-    <h2><span class="step">5</span>Ça rame : c'est ton PC ou le serveur ?</h2>
+    <h2><span class="step">6</span>Ça rame : c'est ton PC ou le serveur ?</h2>
     <div class="compare">
-      <div><h3>Ton PC (FPS bas)</h3><p>L'image saccade, même quand tu ne bouges pas. Le compteur de FPS (touche <kbd>F3</kbd>, en haut à gauche) est bas.</p><p class="muted">→ Reprends les points 1 à 4.</p></div>
+      <div><h3>Ton PC (FPS bas)</h3><p>L'image saccade, même quand tu ne bouges pas. Le compteur de FPS (touche <kbd>F3</kbd>, en haut à gauche) est bas.</p><p class="muted">→ Reprends les points 1, 2, 3 et 5.</p></div>
       <div><h3>Le serveur (lag)</h3><p>L'image est fluide, mais les blocs cassés réapparaissent, les monstres se téléportent, les coffres mettent du temps à s'ouvrir.</p><p class="muted">→ Ce n'est pas ton PC : préviens l'admin.</p></div>
     </div>
   </section>
 
   <section>
-    <h2><span class="step">6</span>Envoyer un diagnostic à l'admin</h2>
+    <h2><span class="step">7</span>Envoyer un diagnostic à l'admin</h2>
     <p>Le pack contient <b>spark</b>, un outil qui mesure ce qui ralentit le jeu. Quand ça rame, tape dans le chat :</p>
     <div class="cmd"><code id="c1">/sparkc profiler start</code><button type="button" data-copy="c1">Copier</button></div>
     <p>Joue normalement 1 à 2 minutes, puis :</p>
@@ -100,7 +122,7 @@
   </section>
 
   <section>
-    <h2><span class="step">7</span>Ce que le pack fait déjà pour toi</h2>
+    <h2><span class="step">8</span>Ce que le pack fait déjà pour toi</h2>
     <p>Ces mods d'optimisation sont déjà installés, il n'y a rien à ajouter : <b>Sodium</b> (rendu), <b>ImmediatelyFast</b> (interface), <b>Entity Culling</b> (n'affiche pas ce que tu ne vois pas), <b>ModernFix</b> (démarrage et mémoire), <b>FerriteCore</b> (mémoire).</p>
     <div class="note warn"><b>N'ajoute pas de mods toi-même.</b> Un mod en plus ou en moins peut t'empêcher de rejoindre le serveur (« Mismatched mod list »). Les mods qu'on te conseille sur internet, comme Canary, n'existent souvent pas pour notre version : demande d'abord.</div>
     <p class="muted">Premier lancement long (2 à 4 minutes) : c'est normal avec autant de mods, les suivants sont plus rapides.</p>
