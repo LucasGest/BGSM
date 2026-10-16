@@ -155,6 +155,20 @@
    "client": false
   },
   {
+   "id": "ad_astra",
+   "nom": "Ad Astra",
+   "cat": "Dimensions",
+   "desc": "Fusées, combinaisons spatiales et planètes : la Lune, Mars, Vénus, Mercure et Glacio. L'espace s'ouvre avec l'Acte VI.",
+   "client": false
+  },
+  {
+   "id": "ad_astra_giselle_addon",
+   "nom": "Ad Astra: Giselle Addon",
+   "cat": "Dimensions",
+   "desc": "Compatibilités d'Ad Astra avec d'autres mods, dont Mekanism, et objets pratiques.",
+   "client": false
+  },
+  {
    "id": "aether_villages",
    "nom": "Aether Villages",
    "cat": "Dimensions",
@@ -467,6 +481,13 @@
    "nom": "Iron Furnaces",
    "cat": "Tech et stockage",
    "desc": "Des fours plus rapides, améliorables.",
+   "client": false
+  },
+  {
+   "id": "itemcollectors",
+   "nom": "Item Collectors",
+   "cat": "Tech et stockage",
+   "desc": "Des blocs qui aspirent les objets autour d'eux, idéal pour les fermes.",
    "client": false
   },
   {
@@ -792,6 +813,13 @@
    "client": false
   },
   {
+   "id": "connectedglass",
+   "nom": "Connected Glass",
+   "cat": "Déco et construction",
+   "desc": "Des vitres qui se raccordent entre elles, sans bordure.",
+   "client": false
+  },
+  {
    "id": "everycomp",
    "nom": "Every Compat",
    "cat": "Déco et construction",
@@ -985,6 +1013,20 @@
    "nom": "Controlling",
    "cat": "Interface",
    "desc": "Recherche dans le menu des touches.",
+   "client": true
+  },
+  {
+   "id": "darkmodeeverywhere",
+   "nom": "Dark Mode Everywhere",
+   "cat": "Interface",
+   "desc": "Toutes les interfaces en mode sombre.",
+   "client": true
+  },
+  {
+   "id": "inventoryprofilesnext",
+   "nom": "Inventory Profiles Next",
+   "cat": "Interface",
+   "desc": "Tri de l'inventaire, réapprovisionnement automatique et changement d'outil.",
    "client": true
   },
   {
@@ -1191,6 +1233,13 @@
    "client": false
   },
   {
+   "id": "common_storage_lib",
+   "nom": "Common Storage Lib",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de stockage (Ad Astra).",
+   "client": false
+  },
+  {
    "id": "cristellib",
    "nom": "Cristel Lib",
    "cat": "Bibliothèques",
@@ -1240,6 +1289,13 @@
    "client": false
   },
   {
+   "id": "fusion",
+   "nom": "Fusion",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de textures connectées (Connected Glass).",
+   "client": true
+  },
+  {
    "id": "fzzy_config",
    "nom": "Fzzy Config",
    "cat": "Bibliothèques",
@@ -1280,6 +1336,13 @@
    "cat": "Bibliothèques",
    "desc": "Bibliothèque.",
    "client": false
+  },
+  {
+   "id": "libipn",
+   "nom": "libIPN",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque (Inventory Profiles Next).",
+   "client": true
   },
   {
    "id": "lionfishapi",
@@ -1342,6 +1405,13 @@
    "nom": "Prickle",
    "cat": "Bibliothèques",
    "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "resourcefulconfig",
+   "nom": "Resourceful Config",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de configuration (Ad Astra).",
    "client": false
   },
   {
