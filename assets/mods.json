@@ -36,13 +36,6 @@
    "client": false
   },
   {
-   "id": "repurposed_structures",
-   "nom": "Repurposed Structures",
-   "cat": "Monde et structures",
-   "desc": "Des variantes des structures vanilla selon les biomes.",
-   "client": false
-  },
-  {
    "id": "sparsestructures",
    "nom": "Sparse Structures",
    "cat": "Monde et structures",
@@ -204,6 +197,13 @@
    "client": false
   },
   {
+   "id": "apotheosis",
+   "nom": "Apotheosis",
+   "cat": "Exploration et butin",
+   "desc": "Équipement à affixes et à gemmes, et des paliers de monde : les monstres deviennent plus forts à chaque acte.",
+   "client": false
+  },
+  {
    "id": "artifacts",
    "nom": "Artifacts",
    "cat": "Exploration et butin",
@@ -292,6 +292,13 @@
    "nom": "Friends & Foes",
    "cat": "Boss et combat",
    "desc": "Les créatures des votes Minecraft : golem de cuivre, Illusionniste, Wildfire.",
+   "client": false
+  },
+  {
+   "id": "gateways",
+   "nom": "Gateways to Eternity",
+   "cat": "Boss et combat",
+   "desc": "Des portails à vagues de monstres : on les ouvre pour se battre et gagner du butin.",
    "client": false
   },
   {
@@ -792,13 +799,6 @@
    "client": false
   },
   {
-   "id": "forgematica",
-   "nom": "Forgematica",
-   "cat": "Déco et construction",
-   "desc": "Litematica pour NeoForge : construire à partir de plans.",
-   "client": true
-  },
-  {
    "id": "gemsrealm",
    "nom": "Gems Realm",
    "cat": "Déco et construction",
@@ -1030,6 +1030,13 @@
    "client": true
   },
   {
+   "id": "patchouli",
+   "nom": "Patchouli",
+   "cat": "Interface",
+   "desc": "Les livres de guide en jeu de plusieurs mods.",
+   "client": false
+  },
+  {
    "id": "simplytooltips",
    "nom": "Simply Tooltips",
    "cat": "Interface",
@@ -1118,6 +1125,13 @@
    "nom": "Ace's Spell Utils",
    "cat": "Bibliothèques",
    "desc": "Bibliothèque de Cataclysm Spellbooks.",
+   "client": false
+  },
+  {
+   "id": "apothic_attributes",
+   "nom": "Apothic Attributes",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque d'attributs (Apotheosis).",
    "client": false
   },
   {
@@ -1282,13 +1296,6 @@
    "client": false
   },
   {
-   "id": "mafglib",
-   "nom": "MaFgLib",
-   "cat": "Bibliothèques",
-   "desc": "Bibliothèque de Forgematica.",
-   "client": true
-  },
-  {
    "id": "modonomicon",
    "nom": "Modonomicon",
    "cat": "Bibliothèques",
@@ -1314,6 +1321,13 @@
    "nom": "owo-lib",
    "cat": "Bibliothèques",
    "desc": "Bibliothèque.",
+   "client": false
+  },
+  {
+   "id": "placebo",
+   "nom": "Placebo",
+   "cat": "Bibliothèques",
+   "desc": "Bibliothèque de Shadows (Apotheosis).",
    "client": false
   },
   {
