@@ -96,7 +96,7 @@ async function tour() {
   console.log(new Date().toLocaleTimeString('fr-FR', { timeZone: 'Europe/Paris' }), dernier)
 }
 
-client.once('ready', () => {
+client.once('clientReady', () => {
   console.log(`Connecté en tant que ${client.user.tag}. Serveur suivi : ${ADRESSE}`)
   tour()
   setInterval(tour, INTERVALLE)
