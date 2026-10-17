@@ -1,0 +1,16 @@
+{
+  "name": "bgsm-bot-statut",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Statut du serveur Minecraft La Survie des BGSM dans Discord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
